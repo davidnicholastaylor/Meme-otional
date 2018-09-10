@@ -1,3 +1,3 @@
 # Selfware
 
-![Selfware ERD](Selfware-ERD.png)
+![Selfware ERD](Selfware-ERD.PNG)
