@@ -1,7 +1,7 @@
 import { Route, Redirect } from 'react-router-dom'
 import React, { Component } from "react"
-// import Login from './Login'
-// import DataManager from '../data/DataManager'
+import Login from './Login'
+import DataManager from './data/DataManager'
 import "./AppViews.css"
 
 
@@ -11,13 +11,18 @@ import "./AppViews.css"
 export default class AppViews extends Component {
 
 
-    // isAuthenticated = () => sessionStorage.getItem("credentials") !== null
+    isAuthenticated = () => sessionStorage.getItem("credentials") !== null
 
     state = {
         user: [],
         day: [],
         rating: []
     }
+
+    addUser = (user, link) => DataManager.post(user, link)
+    .then(users => this.setState({
+        users: users
+    }))
 
 
     // addArticle = (article, link) => DataManager.post(article, link)
@@ -53,12 +58,12 @@ export default class AppViews extends Component {
             <React.Fragment>
                 <div className="viewArea">
 
-                    {/* <Route path="/login" render={(props) => {
+                    { <Route path="/" render={(props) => {
                         return <Login {...props}
                             addUser={this.addUser} />
                     }} />
 
-                    {/* ARTICLES */
+                    /* ARTICLES */
                     /* <Route exact path="/articles" render={(props) => {
                         if (this.isAuthenticated()) {
                             return <ArticleList {...props}
