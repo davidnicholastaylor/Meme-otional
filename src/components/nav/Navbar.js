@@ -10,13 +10,13 @@ class NavBar extends Component {
             <nav >
                 <ul >
                     <li >
-                        <Link  to="/day">Day</Link>
+                        <Link  to="/days">Day</Link>
                     </li>
                     <li >
-                        <Link  to="/month">Month</Link>
+                        <Link  to="/months">Month</Link>
                     </li>
                     <li >
-                        <Link  to="/year">Year</Link>
+                        <Link  to="/years">Year</Link>
                     </li>
                 </ul>
             </nav>

@@ -4,6 +4,9 @@ import Login from './Login'
 import DataManager from './data/DataManager'
 import "./AppViews.css"
 
+import DayDisplay from "./day/DayDisplay"
+import DayForm from "./day/DayEdit"
+import DayEdit from "./day/DayForm"
 
 
 
@@ -14,9 +17,8 @@ export default class AppViews extends Component {
     isAuthenticated = () => sessionStorage.getItem("credentials") !== null
 
     state = {
-        user: [],
-        day: [],
-        rating: []
+        users: [],
+        days: []
     }
 
     addUser = (user, link) => DataManager.post(user, link)
@@ -25,32 +27,29 @@ export default class AppViews extends Component {
     }))
 
 
-    // addArticle = (article, link) => DataManager.post(article, link)
-    //     .then(() => DataManager.getAllArticles("articles"))
-    //     .then(articles => this.setState({
-    //         articles: articles
-    //     }))
-    // editArticle = (article, id, link) => DataManager.put(article, id, link)
-    //     .then(() => DataManager.getAll("articles"))
-    //     .then(articles => this.setState({
-    //         articles: articles
-    //     }))
-    // deleteArticle = (id, link) => DataManager.removeAndList(id, link)
-    //     .then(() => DataManager.getAll("articles"))
-    //     .then(articles => this.setState({
-    //         articles: articles
-    //     }))
+    addDay = (day, link) => DataManager.post(day, link)
+        .then(days => this.setState({
+            days: days
+        }))
+    editDay = (day, id, link) => DataManager.put(day, id, link)
+        .then(days => this.setState({
+            days: days
+        }))
+    deleteDay = (id, link) => DataManager.removeAndList(id, link)
+        .then(days => this.setState({
+            days: days
+        }))
 
 
 
 
 
-    // componentDidMount() {
-    //     const _state = {}
-    //     DataManager.getAll("articles").then(articles => _state.articles = articles)
-    //         .then(() => DataManager.getAll("users").then(users => _state.users = users))
-    //         .then(() => { this.setState(_state) })
-    // }
+    componentDidMount() {
+        const _state = {}
+        DataManager.getAll("days").then(days => _state.days = days)
+            .then(() => DataManager.getAll("users").then(users => _state.users = users))
+            .then(() => { this.setState(_state) })
+    }
 
 
     render() {
@@ -58,31 +57,30 @@ export default class AppViews extends Component {
             <React.Fragment>
                 <div className="viewArea">
 
-                    { <Route path="/" render={(props) => {
+                    <Route path="/login" render={(props) => {
                         return <Login {...props}
                             addUser={this.addUser} />
                     }} />
 
-                    /* ARTICLES */
-                    /* <Route exact path="/articles" render={(props) => {
+                    <Route exact path="/days" render={(props) => {
                         if (this.isAuthenticated()) {
-                            return <ArticleList {...props}
-                                articles={this.state.articles}
-                                deleteArticle={this.deleteArticle} />
+                            return <DayDisplay {...props}
+                                days={this.state.days}
+                                deleteDay={this.deleteDay} />
                         } else {
                             return <Redirect to="/login" />
                         }
                     }} />
 
-                    <Route path="/articles/new" render={(props) => {
-                        return <ArticleForm {...props}
-                            addArticle={this.addArticle} />
+                    <Route path="/days/new" render={(props) => {
+                        return <DayForm {...props}
+                            addDay={this.addDay} />
                     }} />
-                    <Route path="/articles/edit/:articleId(\d+)" render={(props) => {
-                        return <ArticleEdit {...props}
-                            editArticle={this.editArticle}
-                            articles={this.state.articles} />
-                    }} /> */}
+                    <Route path="/days/edit/:dayId(\d+)" render={(props) => {
+                        return <DayEdit {...props}
+                            editDay={this.editDay}
+                            days={this.state.days} />
+                    }} />
 
                 </div>
             </React.Fragment>

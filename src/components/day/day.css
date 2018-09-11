@@ -1,0 +1,33 @@
+.day {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card-title {
+    display: flex;
+    justify-content: space-around;
+    align-items: left;
+    flex-direction: column;
+}
+
+.card-link {
+    align-items: right;
+    flex-direction: row;
+    margin: 20px 0 0 0;
+    font-size: 0.7em
+}
+
+.separate-link {
+    margin: 0 5px 0 5px;
+}
+
+.dayButton {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 0 10px 0;
+}
