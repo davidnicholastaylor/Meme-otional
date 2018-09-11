@@ -27,7 +27,6 @@ export default class DayForm extends Component {
                 description: this.state.description,
                 date: this.state.date,
                 userId: JSON.parse(sessionStorage.getItem("credentials")).id
-
             }
 
             // Create the day and redirect user to day list

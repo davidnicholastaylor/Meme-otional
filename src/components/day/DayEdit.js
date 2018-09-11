@@ -6,7 +6,6 @@ export default class DayEdit extends Component {
     state = {
         rating: "",
         description: "",
-        date: null
     }
 
     componentDidMount() {
@@ -14,8 +13,6 @@ export default class DayEdit extends Component {
         this.setState(rating);
         const description = this.props.days.find(a => a.id === parseInt(this.props.match.params.dayId, 0))
         this.setState(description);
-        const date = this.props.days.find(a => a.id === parseInt(this.props.match.params.dayId, 0))
-        this.setState(date);
     }
 
     // Update state whenever an input field is edited
@@ -34,7 +31,6 @@ export default class DayEdit extends Component {
         const day = {
             rating: this.state.rating,
             description: this.state.description,
-            date: this.state.date,
             userId: JSON.parse(sessionStorage.getItem("credentials")).id
 
         }
@@ -64,12 +60,6 @@ export default class DayEdit extends Component {
                             id="description"
                             placeholder="Description"
                             defaultValue={this.state.description} />
-                        <input type="date" required={true}
-                            className="form-control"
-                            onChange={this.handleFieldChange}
-                            id="date"
-                            placeholder="Date" 
-                            defaultValue={this.state.date}/>
                     </div>
                     <button type="submit" onClick={this.editDay} >Submit</button>
                 </form>

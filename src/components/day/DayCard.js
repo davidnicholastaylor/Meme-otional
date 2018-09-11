@@ -8,9 +8,9 @@ export default class DayDisplay extends Component {
 
     render() {
         let getUsername = this.props.users.find(users => {
-                if(users.id === this.props.days.userId)
-                return users.inputUsername
-            })
+            if (users.id === this.props.days.userId) {
+                return users.inputUsername}
+        })
         return (
             <React.Fragment>
                 <div className="dayTitle">
