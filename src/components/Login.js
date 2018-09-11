@@ -40,7 +40,7 @@ export default class Login extends Component {
                             id: loginUser.id
                         })
                     )
-                    this.props.history.push("/tracker")
+                    this.props.history.push("/days")
                 } else {
                     alert("No user found, please register!")
                 }
@@ -64,7 +64,7 @@ export default class Login extends Component {
                     inputPassword: this.state.password,
                 }
 
-                this.props.addUser(newUser, "users").then(() => this.props.history.push("/tracker"))
+                this.props.addUser(newUser, "users").then(() => this.props.history.push("/days"))
             }
 
         })

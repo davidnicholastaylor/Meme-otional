@@ -3,6 +3,11 @@
     justify-content: space-evenly;
 }
 
+.dayTitle {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .card {
     display: flex;
     justify-content: space-evenly;

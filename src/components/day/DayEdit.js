@@ -14,7 +14,7 @@ export default class DayEdit extends Component {
         this.setState(rating);
         const description = this.props.days.find(a => a.id === parseInt(this.props.match.params.dayId, 0))
         this.setState(description);
-        const date = this.props.days.find(a => a.id === parseInt(this.props.match.params.dayId))
+        const date = this.props.days.find(a => a.id === parseInt(this.props.match.params.dayId, 0))
         this.setState(date);
     }
 
@@ -40,7 +40,7 @@ export default class DayEdit extends Component {
         }
         const dayEditId = parseInt(this.props.match.params.dayId, 0)
 
-        // Create the day and redirect user to day list
+        // Create the day and redirect user to day display
         this.props.editday(day, dayEditId, "days").then(() => this.props.history.push("/days"))
     }
 

@@ -65,9 +65,9 @@ export default class AppViews extends Component {
                     <Route exact path="/days" render={(props) => {
                         if (this.isAuthenticated()) {
                             return <DayDisplay {...props}
+                                users={this.state.users} 
                                 days={this.state.days}
-                                deleteDay={this.deleteDay}
-                                users={this.state.users} />
+                                deleteDay={this.deleteDay} />
                         } else {
                             return <Redirect to="/login" />
                         }
