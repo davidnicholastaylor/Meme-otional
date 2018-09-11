@@ -9,14 +9,14 @@ export default class DayEdit extends Component {
         date: null
     }
 
-    // componentDidMount() {
-    //     const rating = this.props.days.find(a => a.id === parseInt(this.props.match.params.dayId, 0))
-    //     this.setState(rating);
-    //     const description = this.props.days.find(a => a.id === parseInt(this.props.match.params.dayId, 0))
-    //     this.setState(description);
-    //     const date = this.props.days.find(a => a.id === parseInt(this.props.match.params.dayId))
-    //     this.setState(date);
-    // }
+    componentDidMount() {
+        const rating = this.props.days.find(a => a.id === parseInt(this.props.match.params.dayId, 0))
+        this.setState(rating);
+        const description = this.props.days.find(a => a.id === parseInt(this.props.match.params.dayId, 0))
+        this.setState(description);
+        const date = this.props.days.find(a => a.id === parseInt(this.props.match.params.dayId))
+        this.setState(date);
+    }
 
     // Update state whenever an input field is edited
     handleFieldChange = evt => {
@@ -52,21 +52,18 @@ export default class DayEdit extends Component {
 
                 <form className="dayForm">
                     <div className="form-group">
-                        <label htmlFor="rating">rating</label>
                         <input type="text" required={true}
                             className="form-control"
                             onChange={this.handleFieldChange}
                             id="rating"
                             placeholder="Rating"
                             defaultValue={this.state.rating} />
-                        <label htmlFor="description">description</label>
                         <input type="text" required={true}
                             className="form-control"
                             onChange={this.handleFieldChange}
                             id="description"
                             placeholder="Description"
                             defaultValue={this.state.description} />
-                        <label htmlFor="date">Date</label>
                         <input type="date" required={true}
                             className="form-control"
                             onChange={this.handleFieldChange}
@@ -74,7 +71,7 @@ export default class DayEdit extends Component {
                             placeholder="Date" 
                             defaultValue={this.state.date}/>
                     </div>
-                    <button type="submit" onClick={this.editDay} className="btn btn-primary">Submit</button>
+                    <button type="submit" onClick={this.editDay} >Submit</button>
                 </form>
             {/* {<h1>Not your rating</h1>} */}
             </React.Fragment>

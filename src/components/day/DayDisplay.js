@@ -6,21 +6,24 @@ import "./day.css"
 
 export default class DayDisplay extends Component {
 
-    // getUsername = day => {
-    //     let user = this.props.users.find(user => {
-    //         return user.id === day.userId
-    //     })
-    //     return user.inputEmail
-    // }
+    getUsername = day => {
+        let user = this.props.users.find(user => {
+            return user.id === day.userId
+        })
+        return user.inputUsername
+    }
     render() {
         return (
             <React.Fragment>
+                {this.props.days.map(day => 
+                <h2> Hello, {this.getUsername(day)}</h2>
+                )}
                 <div className="dayButton">
                     <button type="button"
                         onClick={() => {
                             this.props.history.push("/days/new")
                         }}>
-                        Add day
+                        How was your day?
                     </button>
                 </div>
                 <section className="day">
@@ -28,7 +31,6 @@ export default class DayDisplay extends Component {
                         this.props.days.map(day =>
                             <div key={day.id} className="card">
                                 <div className="card-body">
-                                    {/* {this.getUsername(day)} */}
                                        <h3 className="card-title"> {day.rating} </h3>
                                     <h5>
                                         {day.date}

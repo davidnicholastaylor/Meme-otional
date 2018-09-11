@@ -66,7 +66,8 @@ export default class AppViews extends Component {
                         if (this.isAuthenticated()) {
                             return <DayDisplay {...props}
                                 days={this.state.days}
-                                deleteDay={this.deleteDay} />
+                                deleteDay={this.deleteDay}
+                                users={this.state.users} />
                         } else {
                             return <Redirect to="/login" />
                         }

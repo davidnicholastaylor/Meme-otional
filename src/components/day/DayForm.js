@@ -39,21 +39,18 @@ export default class DayForm extends Component {
             <React.Fragment>
                 <form className="dayForm">
                     <div className="form-group">
-                        <label htmlFor="rating">rating</label>
                         <input type="text" required
                                onChange={this.handleFieldChange}
                                id="rating"
-                               placeholder="rating" />
-                        <label htmlFor="description">description</label>
+                               placeholder="Rating" />
                         <input type="text" required
                                onChange={this.handleFieldChange}
                                id="description"
-                               placeholder="description" />
-                        <label htmlFor="date">date</label>
+                               placeholder="Description" />
                         <input type="date" required
                                onChange={this.handleFieldChange}
                                id="date"
-                               placeholder="date" />
+                               placeholder="Date" />
                         <button onClick={this.constructNewDay}>Submit</button>
                     </div>
                 </form>
