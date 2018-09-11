@@ -4,7 +4,7 @@ import Login from './Login'
 import DataManager from './data/DataManager'
 import "./AppViews.css"
 
-import DayDisplay from "./day/DayDisplay"
+import DayCard from "./day/DayCard"
 import DayForm from "./day/DayForm"
 import DayEdit from "./day/DayEdit"
 
@@ -64,7 +64,7 @@ export default class AppViews extends Component {
 
                     <Route exact path="/days" render={(props) => {
                         if (this.isAuthenticated()) {
-                            return <DayDisplay {...props}
+                            return <DayCard {...props}
                                 users={this.state.users} 
                                 days={this.state.days}
                                 deleteDay={this.deleteDay} />
