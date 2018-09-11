@@ -22,7 +22,7 @@ export default class DayForm extends Component {
      */
     constructNewDay = evt => {
         evt.preventDefault()
-            const day = {
+            const days = {
                 rating: this.state.rating,
                 description: this.state.description,
                 date: this.state.date,
@@ -31,7 +31,7 @@ export default class DayForm extends Component {
             }
 
             // Create the day and redirect user to day list
-            this.props.addDay(day, "days").then(() => this.props.history.push("/days"))
+            this.props.addDay(days, "days").then(() => this.props.history.push("/days"))
     }
 
     render() {
@@ -39,21 +39,21 @@ export default class DayForm extends Component {
             <React.Fragment>
                 <form className="dayForm">
                     <div className="form-group">
-                        <label htmlFor="rating">Rating</label>
+                        <label htmlFor="rating">rating</label>
                         <input type="text" required
                                onChange={this.handleFieldChange}
-                               id="Rating"
-                               placeholder="Rating" />
-                        <label htmlFor="description">Description</label>
+                               id="rating"
+                               placeholder="rating" />
+                        <label htmlFor="description">description</label>
                         <input type="text" required
                                onChange={this.handleFieldChange}
-                               id="Description"
-                               placeholder="Description" />
-                        <label htmlFor="date">Date</label>
+                               id="description"
+                               placeholder="description" />
+                        <label htmlFor="date">date</label>
                         <input type="date" required
                                onChange={this.handleFieldChange}
                                id="date"
-                               placeholder="Date" />
+                               placeholder="date" />
                         <button onClick={this.constructNewDay}>Submit</button>
                     </div>
                 </form>

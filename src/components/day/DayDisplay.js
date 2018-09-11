@@ -29,11 +29,11 @@ export default class DayDisplay extends Component {
                             <div key={day.id} className="card">
                                 <div className="card-body">
                                     {/* {this.getUsername(day)} */}
-                                    <h5 className="card-title">
+                                       <h3 className="card-title"> {day.rating} </h3>
+                                    <h5>
                                         {day.date}
                                     </h5>
                                     <p>
-                                        {day.rating}
                                         {day.description}
                                     </p>
                                     <div className="card-link">
