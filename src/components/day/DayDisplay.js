@@ -6,14 +6,12 @@ import "./day.css"
 
 export default class DayDisplay extends Component {
 
-    getUserName = day => {
-        console.log(day)
-        let user = this.props.users.find(user => {
-            console.log(user)
-            return user.id === day.userId
-        })
-        return user.inputEmail
-    }
+    // getUsername = day => {
+    //     let user = this.props.users.find(user => {
+    //         return user.id === day.userId
+    //     })
+    //     return user.inputEmail
+    // }
     render() {
         return (
             <React.Fragment>
@@ -30,7 +28,7 @@ export default class DayDisplay extends Component {
                         this.props.days.map(day =>
                             <div key={day.id} className="card">
                                 <div className="card-body">
-                                    {this.getUserName(day)}
+                                    {/* {this.getUsername(day)} */}
                                     <h5 className="card-title">
                                         {day.date}
                                     </h5>

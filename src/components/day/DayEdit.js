@@ -38,7 +38,7 @@ export default class DayEdit extends Component {
             userId: JSON.parse(sessionStorage.getItem("credentials")).id
 
         }
-        const dayEditId = parseInt(this.props.match.params.dayId)
+        const dayEditId = parseInt(this.props.match.params.dayId, 0)
 
         // Create the day and redirect user to day list
         this.props.editday(day, dayEditId, "days").then(() => this.props.history.push("/days"))
@@ -53,21 +53,21 @@ export default class DayEdit extends Component {
                 <form className="dayForm">
                     <div className="form-group">
                         <label htmlFor="rating">rating</label>
-                        <input type="text" required="true"
+                        <input type="text" required={true}
                             className="form-control"
                             onChange={this.handleFieldChange}
                             id="rating"
                             placeholder="Rating"
                             defaultValue={this.state.rating} />
                         <label htmlFor="description">description</label>
-                        <input type="text" required="true"
+                        <input type="text" required={true}
                             className="form-control"
                             onChange={this.handleFieldChange}
                             id="description"
                             placeholder="Description"
                             defaultValue={this.state.description} />
                         <label htmlFor="date">Date</label>
-                        <input type="date" required="true"
+                        <input type="date" required={true}
                             className="form-control"
                             onChange={this.handleFieldChange}
                             id="date"

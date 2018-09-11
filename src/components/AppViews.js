@@ -5,8 +5,8 @@ import DataManager from './data/DataManager'
 import "./AppViews.css"
 
 import DayDisplay from "./day/DayDisplay"
-import DayForm from "./day/DayEdit"
-import DayEdit from "./day/DayForm"
+import DayForm from "./day/DayForm"
+import DayEdit from "./day/DayEdit"
 
 
 
@@ -72,7 +72,7 @@ export default class AppViews extends Component {
                         }
                     }} />
 
-                    <Route path="/days/new" render={(props) => {
+                    <Route exact path="/days/new" render={(props) => {
                         return <DayForm {...props}
                             addDay={this.addDay} />
                     }} />
