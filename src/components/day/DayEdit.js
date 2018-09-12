@@ -26,7 +26,7 @@ export default class DayEdit extends Component {
         Local method for validation, creating day object, and
         invoking the function reference passed from parent component
      */
-    editday = evt => {
+    editDay = evt => {
         evt.preventDefault()
         const day = {
             rating: this.state.rating,
@@ -37,7 +37,7 @@ export default class DayEdit extends Component {
         const dayEditId = parseInt(this.props.match.params.dayId, 0)
 
         // Create the day and redirect user to day display
-        this.props.editday(day, dayEditId, "days").then(() => this.props.history.push("/days"))
+        this.props.editDay(day, dayEditId, "days").then(() => this.props.history.push("/days"))
     }
 
     render() {
