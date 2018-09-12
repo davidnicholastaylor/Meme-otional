@@ -43,9 +43,6 @@ export default class DayEdit extends Component {
     render() {
         return (
             <React.Fragment>
-                
-                {/* { this.state.day.userId === JSON.parse(sessionStorage.getItem("credentials")).id && */}
-
                 <form className="dayForm">
                     <div className="form-group">
                         <input type="text" required={true}
@@ -63,7 +60,6 @@ export default class DayEdit extends Component {
                     </div>
                     <button type="submit" onClick={this.editDay} >Submit</button>
                 </form>
-            {/* {<h1>Not your rating</h1>} */}
             </React.Fragment>
         )
     }

@@ -6,14 +6,15 @@ import "./day.css"
 export default class DayDisplay extends Component {
 
     render() {
+        let user = JSON.parse(sessionStorage.getItem("credentials"))
         return (
             <React.Fragment>
                 <div className="dayTitle">
-                    {this.props.users.map(user =>
-                        <h2 key={user.id}> 
-                        Hello, {user.inputUsername}
+                    {/* {this.props.users.find(user => */}
+                        <h2> 
+                        Hello, {user.username}
                         </h2>
-                    )}
+                    {/* )} */}
                 </div>
                 <div className="dayButton">
                     <button type="button"
