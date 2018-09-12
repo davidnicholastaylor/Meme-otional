@@ -48,7 +48,7 @@ export default class AppViews extends Component {
     componentDidMount() {
         const _state = {}
         DataManager.getAll("days").then(days => _state.days = days)
-            .then(() => DataManager.get("users").then(users => _state.users = users))
+            .then(() => DataManager.getUserData("users").then(users => _state.users = users))
             .then(() => {this.setState(_state)})
     }
 
