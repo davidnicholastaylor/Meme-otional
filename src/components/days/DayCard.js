@@ -3,20 +3,17 @@ import "./day.css"
 // import { Link } from "react-router-dom"
 
 
-
 export default class DayDisplay extends Component {
 
     render() {
-        let getUsername = this.props.users.find(users => {
-            if (users.id === this.props.days.userId) {
-                return users.inputUsername}
-        })
         return (
             <React.Fragment>
                 <div className="dayTitle">
-                    {
-                        <h2> Hello, {getUsername}</h2>
-                    }
+                    {this.props.users.map(user =>
+                        <h2 key={user.id}> 
+                        Hello, {user.inputUsername}
+                        </h2>
+                    )}
                 </div>
                 <div className="dayButton">
                     <button type="button"

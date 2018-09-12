@@ -9,9 +9,9 @@ export default class DayEdit extends Component {
     }
 
     componentDidMount() {
-        const rating = this.props.days.find(a => a.id === parseInt(this.props.match.params.dayId, 0))
+        const rating = this.props.days.find(rating => rating.id === parseInt(this.props.match.params.dayId, 0))
         this.setState(rating);
-        const description = this.props.days.find(a => a.id === parseInt(this.props.match.params.dayId, 0))
+        const description = this.props.days.find(description => description.id === parseInt(this.props.match.params.dayId, 0))
         this.setState(description);
     }
 

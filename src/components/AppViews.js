@@ -4,9 +4,9 @@ import Login from './Login'
 import DataManager from './data/DataManager'
 import "./AppViews.css"
 
-import DayCard from "./day/DayCard"
-import DayForm from "./day/DayForm"
-import DayEdit from "./day/DayEdit"
+import DayCard from "./days/DayCard"
+import DayForm from "./days/DayForm"
+import DayEdit from "./days/DayEdit"
 
 
 
@@ -47,8 +47,8 @@ export default class AppViews extends Component {
     componentDidMount() {
         const _state = {}
         DataManager.getAll("days").then(days => _state.days = days)
-            .then(() => DataManager.getAll("users").then(users => _state.users = users))
-            .then(() => { this.setState(_state) })
+            .then(() => DataManager.get("users").then(users => _state.users = users))
+            .then(() => {this.setState(_state)})
     }
 
 
