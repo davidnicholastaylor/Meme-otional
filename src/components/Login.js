@@ -21,10 +21,6 @@ export default class Login extends Component {
     handleLogin = (e) => {
         e.preventDefault()
 
-        /*
-            For now, just store the email and password that
-            the customer enters into local storage.
-        */
         let username = this.state.username;
         let password = this.state.password;
         DataManager.getAll("users")
@@ -34,7 +30,6 @@ export default class Login extends Component {
                     sessionStorage.setItem(
                         "credentials",
                         JSON.stringify({
-                            email: this.state.email,
                             password: this.state.password,
                             username: this.state.username,
                             id: loginUser.id
@@ -46,32 +41,12 @@ export default class Login extends Component {
                 }
             })
     }
-
-    constructNewUser = evt => {
-        evt.preventDefault()
-        let username = this.state.username;
-        let email = this.state.email;
-        let password = this.state.password;
-        DataManager.getAll("users").then((users) => {
-            let loginUser = users.find(u => u.inputEmail === email && u.inputUsername === username && u.inputPassword === password)
-            console.log(loginUser)
-            if (loginUser) {
-                alert("This user or email is already taken")
-            } else {
-                let newUser = {
-                    inputUsername: this.state.username,
-                    inputEmail: this.state.email,
-                    inputPassword: this.state.password,
-                }
-
-                this.props.addUser(newUser, "users").then(() => this.props.history.push("/days"))
-            }
-
-        })
-    }
-
-
+    
+    
     render() {
+        
+        let registerLink = () => this.props.history.push("/register")
+
         return (
             <form onSubmit={this.handleLogin}>
                 <h1>Please sign in</h1>
@@ -82,13 +57,6 @@ export default class Login extends Component {
                     id="username"
                     placeholder="Username"
                     required="" autoFocus="" />
-                <label htmlFor="inputEmail">
-                    Email address
-                </label>
-                <input onChange={this.handleFieldChange} type="email"
-                    id="email"
-                    placeholder="Email address"
-                    required="" autoFocus="" />
                 <label htmlFor="inputPassword">
                     Password
                 </label>
@@ -96,11 +64,12 @@ export default class Login extends Component {
                     id="password"
                     placeholder="Password"
                     required="" autoFocus="" />
-                <button type="submit" onClick={this.constructNewUser}>
-                    Register
-                </button>
-                <button type="submit" onClick={this.handleLogin}>
+                <button type="submit">
                     Sign In
+                </button>
+
+                <button type="submit" onClick={registerLink.bind()}>
+                    Register
                 </button>
             </form>
         )

@@ -44,7 +44,7 @@ export default class DayEdit extends Component {
         return (
             <React.Fragment>
                 
-                {/* { this.state.rating.userId === JSON.parse(sessionStorage.getItem("credentials")).id && */}
+                {/* { this.state.day.userId === JSON.parse(sessionStorage.getItem("credentials")).id && */}
 
                 <form className="dayForm">
                     <div className="form-group">

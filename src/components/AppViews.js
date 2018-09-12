@@ -1,6 +1,7 @@
 import { Route, Redirect } from 'react-router-dom'
 import React, { Component } from "react"
 import Login from './Login'
+import Register from './Register'
 import DataManager from './data/DataManager'
 import "./AppViews.css"
 
@@ -59,6 +60,11 @@ export default class AppViews extends Component {
 
                     <Route path="/login" render={(props) => {
                         return <Login {...props}
+                           />
+                    }} />
+
+                    <Route path="/register" render={(props) => {
+                        return <Register {...props}
                             addUser={this.addUser} />
                     }} />
 
