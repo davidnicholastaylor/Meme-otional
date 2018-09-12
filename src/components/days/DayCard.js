@@ -7,21 +7,22 @@ export default class DayDisplay extends Component {
 
     render() {
         let user = JSON.parse(sessionStorage.getItem("credentials"))
+        let today = new Date,
+        date = ((today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear())
+
         return (
             <React.Fragment>
                 <div className="dayTitle">
-                    {/* {this.props.users.find(user => */}
                         <h2> 
                         Hello, {user.username}
                         </h2>
-                    {/* )} */}
                 </div>
                 <div className="dayButton">
                     <button type="button"
                         onClick={() => {
                             this.props.history.push("/days/new")
                         }}>
-                        How was your day?
+                        How do you feel?
                     </button>
                 </div>
                 <section className="day">

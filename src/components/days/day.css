@@ -7,6 +7,10 @@
     display: flex;
     justify-content: space-evenly;
 }
+.dayDate {
+    display: flex;
+    justify-content: space-evenly;
+}
 
 .card {
     display: flex;

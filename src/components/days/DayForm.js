@@ -1,14 +1,17 @@
 import React, { Component } from "react"
+import DayDate from "./DayDate"
 import "./day.css"
 
 export default class DayForm extends Component {
     // Set initial state
+
+    
     state = {
         rating: "",
-        description: "",
-        date: null
+        description: ""
     }
-
+    
+    
     // Update state whenever an input field is edited
     handleFieldChange = evt => {
         const stateToChange = {}
@@ -20,12 +23,13 @@ export default class DayForm extends Component {
         Local method for validation, creating day object, and
         invoking the function reference passed from parent component
      */
+    
     constructNewDay = evt => {
         evt.preventDefault()
             const days = {
                 rating: this.state.rating,
                 description: this.state.description,
-                date: this.state.date,
+                date: DayDate.getDate(),
                 userId: JSON.parse(sessionStorage.getItem("credentials")).id
             }
 
@@ -34,6 +38,7 @@ export default class DayForm extends Component {
     }
 
     render() {
+        
         return (
             <React.Fragment>
                 <form className="dayForm">
@@ -46,10 +51,6 @@ export default class DayForm extends Component {
                                onChange={this.handleFieldChange}
                                id="description"
                                placeholder="Description" />
-                        <input type="date" required
-                               onChange={this.handleFieldChange}
-                               id="date"
-                               placeholder="Date" />
                         <button onClick={this.constructNewDay}>Submit</button>
                     </div>
                 </form>
