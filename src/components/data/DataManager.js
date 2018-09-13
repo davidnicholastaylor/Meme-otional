@@ -44,7 +44,7 @@ export default Object.create(null, {
     put: {
         value: function (editItem, id, link) {
             return fetch(`${remoteURL}/${link}/${id}`, {
-                method: "PUT",
+                method: "PATCH",
                 headers: {
                     "Content-Type": "application/json"
                 },
