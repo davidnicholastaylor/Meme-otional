@@ -6,6 +6,7 @@ export default class DayEdit extends Component {
     state = {
         rating: "",
         description: "",
+        date: null
     }
 
     componentDidMount() {
@@ -31,6 +32,7 @@ export default class DayEdit extends Component {
         const day = {
             rating: this.state.rating,
             description: this.state.description,
+            date: this.props.days.date,
             userId: JSON.parse(sessionStorage.getItem("credentials")).id
 
         }
