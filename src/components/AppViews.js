@@ -65,7 +65,8 @@ export default class AppViews extends Component {
 
                     <Route path="/register" render={(props) => {
                         return <Register {...props}
-                            addUser={this.addUser} />
+                            addUser={this.addUser}
+                            users={this.state.users} />
                     }} />
 
                     <Route exact path="/days" render={(props) => {

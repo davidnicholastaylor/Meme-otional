@@ -25,8 +25,8 @@ export default class DayDisplay extends Component {
                 </div>
                 {
                     this.props.days.map(day =>
-                        <section className="day">
-                            <div key={day.id} className="card">
+                        <section key={day.id} className="day">
+                            <div className="card">
                                 {activeUser.id === day.userId &&
                                     <div className="card-body">
                                         <h3

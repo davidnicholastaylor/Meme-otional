@@ -25,7 +25,8 @@ export default class Register extends Component {
             let username = this.state.username;
             let email = this.state.email;
             let password = this.state.password;
-            DataManager.getAll("users").then((users) => {
+            DataManager.getAll("users")
+            .then((users) => {
                 let loginUser = users.find(u => u.inputEmail === email && u.inputUsername === username && u.inputPassword === password)
                 if (loginUser) {
                     alert("This user or email is already taken")
@@ -35,16 +36,31 @@ export default class Register extends Component {
                         inputEmail: this.state.email,
                         inputPassword: this.state.password,
                     }
-
-                    this.props.addUser(newUser, "users").then(() => this.props.history.push("/login"))
+                    this.props.addUser(newUser, "users")
+                    .then(() => DataManager.getAll("users")
+                    .then((users) => {
+                    let loggedIn = users.find(u => u.inputEmail === email && u.inputUsername === username && u.inputPassword === password)
+                    if (loggedIn){
+                    sessionStorage.setItem(
+                        "credentials",
+                        JSON.stringify({
+                            password: this.state.password,
+                            username: this.state.username,
+                            id: loggedIn.id
+                        })
+                    )
                 }
+                this.props.history.push("/days")
+            })
+        )
+            }
 
             })
         }
         render() {
             return (
                 <form onSubmit={this.constructNewUser}>
-                    <h1>Please sign in</h1>
+                    <h1>Start the Journey</h1>
                     <label htmlFor="inputUsername">
                         Username
                 </label>
@@ -66,7 +82,7 @@ export default class Register extends Component {
                         id="password"
                         placeholder="Password"
                         required="" autoFocus="" />
-                    <button type="submit" onClick={this.constructNewUser}>
+                    <button type="submit">
                         Register
                     </button>
                 </form>

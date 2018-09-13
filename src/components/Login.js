@@ -44,12 +44,11 @@ export default class Login extends Component {
     
     
     render() {
-        
         let registerLink = () => this.props.history.push("/register")
-
+        
         return (
             <form onSubmit={this.handleLogin}>
-                <h1>Please sign in</h1>
+                <h1>Welcome back</h1>
                 <label htmlFor="inputUsername">
                     Username
                 </label>
