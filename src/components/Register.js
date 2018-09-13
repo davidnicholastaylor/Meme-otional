@@ -27,19 +27,19 @@ export default class Register extends Component {
             let password = this.state.password;
             DataManager.getAll("users")
             .then((users) => {
-                let loginUser = users.find(u => u.inputEmail === email && u.inputUsername === username && u.inputPassword === password)
+                let loginUser = users.find(u => u.activeEmail === email && u.activeUser === username && u.activePassword === password)
                 if (loginUser) {
                     alert("This user or email is already taken")
                 } else {
                     let newUser = {
-                        inputUsername: this.state.username,
-                        inputEmail: this.state.email,
-                        inputPassword: this.state.password,
+                        activeUser: this.state.username,
+                        activeEmail: this.state.email,
+                        activePassword: this.state.password,
                     }
                     this.props.addUser(newUser, "users")
                     .then(() => DataManager.getAll("users")
                     .then((users) => {
-                    let loggedIn = users.find(u => u.inputEmail === email && u.inputUsername === username && u.inputPassword === password)
+                    let loggedIn = users.find(u => u.activeEmail === email && u.activeUser === username && u.activePassword === password)
                     if (loggedIn){
                     sessionStorage.setItem(
                         "credentials",
@@ -61,21 +61,21 @@ export default class Register extends Component {
             return (
                 <form onSubmit={this.constructNewUser}>
                     <h1>Start the Journey</h1>
-                    <label htmlFor="inputUsername">
+                    <label htmlFor="activeUser">
                         Username
                 </label>
                     <input onChange={this.handleFieldChange} type="username"
                         id="username"
                         placeholder="Username"
                         required="" autoFocus="" />
-                    <label htmlFor="inputEmail">
+                    <label htmlFor="activeEmail">
                         Email address
                 </label>
                     <input onChange={this.handleFieldChange} type="email"
                         id="email"
                         placeholder="Email address"
                         required="" autoFocus="" />
-                    <label htmlFor="inputPassword">
+                    <label htmlFor="activePassword">
                         Password
                 </label>
                     <input onChange={this.handleFieldChange} type="password"

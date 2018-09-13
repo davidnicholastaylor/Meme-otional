@@ -40,3 +40,32 @@
     justify-content: space-evenly;
     margin: 0 0 10px 0;
 }
+
+.dayForm {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container input[type=radio] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.container input[type=radio]:checked ~ .awesome {
+    border: solid 3px #2196F3;
+  }

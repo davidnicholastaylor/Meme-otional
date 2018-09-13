@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import DayDate from "./DayDate"
 import "./day.css"
+import party from "../images/100.webp"
 
 export default class DayForm extends Component {
     // Set initial state
@@ -43,10 +44,13 @@ export default class DayForm extends Component {
             <React.Fragment>
                 <form className="dayForm">
                     <div className="form-group">
-                        <input type="text" required
+                    <label className="container">
+                        <input type="radio" required
                                onChange={this.handleFieldChange}
                                id="rating"
-                               placeholder="Rating" />
+                               value={party} />
+                               <img src={party} alt="Rad!" className="awesome"></img>
+                               </label>
                         <input type="text" required
                                onChange={this.handleFieldChange}
                                id="description"
