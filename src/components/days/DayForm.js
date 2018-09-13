@@ -1,18 +1,19 @@
 import React, { Component } from "react"
 import DayDate from "./DayDate"
 import "./day.css"
-import party from "../images/100.webp"
+import party from "../images/party.gif"
+import sloth from "../images/sloth.gif"
 
 export default class DayForm extends Component {
     // Set initial state
 
-    
+
     state = {
         rating: "",
         description: ""
     }
-    
-    
+
+
     // Update state whenever an input field is edited
     handleFieldChange = evt => {
         const stateToChange = {}
@@ -24,37 +25,44 @@ export default class DayForm extends Component {
         Local method for validation, creating day object, and
         invoking the function reference passed from parent component
      */
-    
+
     constructNewDay = evt => {
         evt.preventDefault()
-            const days = {
-                rating: this.state.rating,
-                description: this.state.description,
-                date: DayDate.getDate(),
-                userId: JSON.parse(sessionStorage.getItem("credentials")).id
-            }
+        const days = {
+            rating: this.state.rating,
+            description: this.state.description,
+            date: DayDate.getDate(),
+            userId: JSON.parse(sessionStorage.getItem("credentials")).id
+        }
 
-            // Create the day and redirect user to day list
-            this.props.addDay(days, "days").then(() => this.props.history.push("/days"))
+        // Create the day and redirect user to day list
+        this.props.addDay(days, "days").then(() => this.props.history.push("/days"))
     }
 
     render() {
-        
+
         return (
             <React.Fragment>
                 <form className="dayForm">
-                    <div className="form-group">
-                    <label className="container">
-                        <input type="radio" required
-                               onChange={this.handleFieldChange}
-                               id="rating"
-                               value={party} />
-                               <img src={party} alt="Rad!" className="awesome"></img>
-                               </label>
+                    <div className="container">
+                        <label>
+                            <input type="radio" required
+                                onChange={this.handleFieldChange}
+                                id="rating"
+                                value={party} />
+                            <img src={party} alt="Rad" className="rad"></img>
+                        </label>
+                        <label>
+                            <input type="radio" required
+                                onChange={this.handleFieldChange}
+                                id="rating"
+                                value={sloth} />
+                            <img src={sloth} alt="Tired" className="tired"></img>
+                        </label>
                         <input type="text" required
-                               onChange={this.handleFieldChange}
-                               id="description"
-                               placeholder="Description" />
+                            onChange={this.handleFieldChange}
+                            id="description"
+                            placeholder="Description" />
                         <button onClick={this.constructNewDay}>Submit</button>
                     </div>
                 </form>
