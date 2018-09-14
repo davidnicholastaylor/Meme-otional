@@ -121,3 +121,8 @@
     max-width: 200px;
     margin-top: 3em;
 }
+
+.editRating {
+    max-width: 250px;
+    margin: .5em;
+}

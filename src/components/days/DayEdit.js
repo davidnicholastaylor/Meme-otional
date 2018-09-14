@@ -1,6 +1,10 @@
 import React, { Component } from "react"
 import "./day.css"
-
+import party from "../images/party.gif"
+import sloth from "../images/sloth.gif"
+import sad from "../images/sad.gif"
+import love from "../images/love.gif"
+import stress from "../images/stress.gif"
 export default class DayEdit extends Component {
     // Set initial state
     state = {
@@ -46,23 +50,62 @@ export default class DayEdit extends Component {
         return (
             <React.Fragment>
                 <form className="container">
-                        <label>
-                            <input type="radio"
-                                onChange={this.handleFieldChange}
-                                id="rating"
-                                name="mood"
-                                value={this.state.rating}
-                                defaultValue={this.state.rating}/>
-                            <img src={this.state.rating} alt="rating" className="rating" />
-                        </label>
-                    <input type="text" required={true}
-                        className="form-control"
+                    <label>
+                        <input type="radio"
+                            onChange={this.handleFieldChange}
+                            id="rating"
+                            name="mood"
+                            value="/static/media/party.cd534470.gif"
+                            checked={this.state.rating === "/static/media/party.cd534470.gif"}
+                        />
+                        <img src={party} alt="Rad" className="rad" />
+                    </label>
+                    <label>
+                        <input type="radio"
+                            onChange={this.handleFieldChange}
+                            id="rating"
+                            name="mood"
+                            value="/static/media/sloth.38784354.gif"
+                            checked={this.state.rating === "/static/media/sloth.38784354.gif"}
+                        />
+                        <img src={sloth} alt="Tired" className="tired" />
+                    </label>
+                    <label>
+                        <input type="radio"
+                            onChange={this.handleFieldChange}
+                            id="rating"
+                            name="mood"
+                            value="/static/media/sad.e49477f7.gif"
+                            checked={this.state.rating === "/static/media/sad.e49477f7.gif"}
+                        />
+                        <img src={sad} alt="Sad" className="sad"></img>
+                    </label>
+                    <label>
+                        <input type="radio"
+                            onChange={this.handleFieldChange}
+                            id="rating"
+                            name="mood"
+                            value="/static/media/love.0f3c8c74.gif"
+                            checked={this.state.rating === "/static/media/love.0f3c8c74.gif"}
+                        />
+                        <img src={love} alt="Love" className="love"></img>
+                    </label>
+                    <label>
+                        <input type="radio"
+                            onChange={this.handleFieldChange}
+                            id="rating"
+                            name="mood"
+                            value="/static/media/stress.078d84f6.gif"
+                            checked={this.state.rating === "/static/media/stress.078d84f6.gif"}
+                        />
+                        <img src={stress} alt="Stress" className="stress"></img>
+                    </label>
+                    <input type="textarea" required
                         onChange={this.handleFieldChange}
-                        className="description"
                         id="description"
-                        placeholder="Why Tho?"
-                        defaultValue={this.state.description} />
-                <button type="submit" onClick={this.editDay} >Submit</button>
+                        className="description"
+                        placeholder="Why tho?" />
+                    <button type="submit" onClick={this.editDay} >Submit</button>
                 </form>
             </React.Fragment >
         )

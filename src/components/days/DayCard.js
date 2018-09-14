@@ -3,6 +3,7 @@ import "./day.css"
 // import { Link } from "react-router-dom"
 
 
+
 export default class DayDisplay extends Component {
 
     render() {
@@ -40,12 +41,12 @@ export default class DayDisplay extends Component {
                                             <button type="button"
                                                 onClick={() =>
                                                     this.props.history.push(`/days/edit/${day.id}`)}
-                                                className="separate-link">Edit day
+                                                className="separate-link">Edit mood
                                         </button>
                                             <button
                                                 onClick={() =>
                                                     this.props.deleteDay(day.id, "days")}
-                                                className="separate-link">Delete day
+                                                className="separate-link">Delete mood
                                         </button>
                                         </div>
                                     </div>
