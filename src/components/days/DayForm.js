@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import DayDate from "./DayDate"
-import "./day.css"
+// import "./day.css"
 import party from "../images/party.gif"
 import sloth from "../images/sloth.gif"
 
@@ -13,6 +13,10 @@ export default class DayForm extends Component {
         description: ""
     }
 
+    componentDidMount() {
+        const option1 = {party}
+        this.setState(option1)
+    }
 
     // Update state whenever an input field is edited
     handleFieldChange = evt => {
@@ -40,23 +44,27 @@ export default class DayForm extends Component {
     }
 
     render() {
-
         return (
             <React.Fragment>
-                <form className="dayForm">
-                    <div className="container">
+                <form className="container">
                         <label>
-                            <input type="radio" required
+                            <input type="radio" 
                                 onChange={this.handleFieldChange}
                                 id="rating"
-                                value={party} />
+                                name="mood"
+                                value="option1"
+                                checked={this.state.rating==="option1"}
+                                />
                             <img src={party} alt="Rad" className="rad"></img>
                         </label>
                         <label>
-                            <input type="radio" required
+                            <input type="radio" 
                                 onChange={this.handleFieldChange}
                                 id="rating"
-                                value={sloth} />
+                                name="mood"
+                                value="option2"
+                                checked={this.state.rating==="option2"}
+                                />
                             <img src={sloth} alt="Tired" className="tired"></img>
                         </label>
                         <input type="text" required
@@ -64,7 +72,6 @@ export default class DayForm extends Component {
                             id="description"
                             placeholder="Description" />
                         <button onClick={this.constructNewDay}>Submit</button>
-                    </div>
                 </form>
             </React.Fragment>
         )

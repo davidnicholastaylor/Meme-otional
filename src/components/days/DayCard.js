@@ -29,7 +29,7 @@ export default class DayDisplay extends Component {
                             <div className="card">
                                 {activeUser.id === day.userId &&
                                     <div className="card-body">
-                                        <img className="card-title" src={day.rating}/>
+                                        <img className="rating-display" alt="rating" src={day.rating}/>
                                         <h5>
                                             {day.date}
                                         </h5>
