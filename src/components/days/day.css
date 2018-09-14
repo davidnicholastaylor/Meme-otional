@@ -89,36 +89,36 @@
 
   
 .tired {
-    max-width: 200px;
+    max-width: 150px;
     margin: .5em;
 }
 
 .rad {
-    max-width: 200px;
+    max-width: 150px;
     margin: .5em;
 }
 
 .sad {
-    max-width: 200px;
+    max-width: 150px;
     margin: .5em;
 }
 
 .love {
-    max-width: 200px;
+    max-width: 150px;
     margin: .5em;
 }
 
 .stress {
-    max-width: 200px;
+    max-width: 150px;
     margin: .5em;
 }
 
 .description {
-    width: 200px;
+    width: 150px;
 }
 
 .rating-display {
-    max-width: 200px;
+    max-width: 150px;
     margin-top: 3em;
 }
 
