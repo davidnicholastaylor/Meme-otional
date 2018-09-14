@@ -104,7 +104,7 @@ export default class DayEdit extends Component {
                         onChange={this.handleFieldChange}
                         id="description"
                         className="description"
-                        placeholder="Why tho?" />
+                        defaultValue={this.state.description} />
                     <button type="submit" onClick={this.editDay} >Submit</button>
                 </form>
             </React.Fragment >
