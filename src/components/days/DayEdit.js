@@ -45,24 +45,26 @@ export default class DayEdit extends Component {
     render() {
         return (
             <React.Fragment>
-                <form className="dayForm">
-                    <div className="form-group">
-                        <input type="text" required={true}
-                            className="form-control"
-                            onChange={this.handleFieldChange}
-                            id="rating"
-                            placeholder="Rating"
-                            defaultValue={this.state.rating} />
-                        <input type="text" required={true}
-                            className="form-control"
-                            onChange={this.handleFieldChange}
-                            id="description"
-                            placeholder="Description"
-                            defaultValue={this.state.description} />
-                    </div>
-                    <button type="submit" onClick={this.editDay} >Submit</button>
+                <form className="container">
+                        <label>
+                            <input type="radio"
+                                onChange={this.handleFieldChange}
+                                id="rating"
+                                name="mood"
+                                value={this.state.rating}
+                                defaultValue={this.state.rating}/>
+                            <img src={this.state.rating} alt="rating" className="rating" />
+                        </label>
+                    <input type="text" required={true}
+                        className="form-control"
+                        onChange={this.handleFieldChange}
+                        className="description"
+                        id="description"
+                        placeholder="Why Tho?"
+                        defaultValue={this.state.description} />
+                <button type="submit" onClick={this.editDay} >Submit</button>
                 </form>
-            </React.Fragment>
+            </React.Fragment >
         )
     }
 }
