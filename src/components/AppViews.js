@@ -9,6 +9,8 @@ import DayCard from "./days/DayCard"
 import DayForm from "./days/DayForm"
 import DayEdit from "./days/DayEdit"
 
+import MoodCharts from "./moods/MoodCharts"
+
 
 
 
@@ -19,7 +21,8 @@ export default class AppViews extends Component {
 
     state = {
         users: [],
-        days: []
+        days: [],
+        moods: []
     }
 
     addUser = (user, link) => DataManager.post(user, link)
@@ -27,12 +30,11 @@ export default class AppViews extends Component {
         users: users
     }))
 
-
     addDay = (day, link) => DataManager.post(day, link)
         .then(days => this.setState({
             days: days
         }))
-    editDay = (day, id, link) => DataManager.put(day, id, link)
+    editDay = (day, id, link) => DataManager.patch(day, id, link)
         .then(days => this.setState({
             days: days
         }))
@@ -49,6 +51,7 @@ export default class AppViews extends Component {
         const _state = {}
         DataManager.getAll("days").then(days => _state.days = days)
             .then(() => DataManager.getUserData("users").then(users => _state.users = users))
+            .then(() => DataManager.getAll("moods").then(moods => _state.moods = moods))
             .then(() => {this.setState(_state)})
     }
 
@@ -80,9 +83,21 @@ export default class AppViews extends Component {
                         }
                     }} />
 
+                    <Route exact path="/charts" render={(props) => {
+                        if (this.isAuthenticated()) {
+                            return <MoodCharts {...props}
+                                users={this.state.users} 
+                                days={this.state.days}
+                                moods={this.state.moods} />
+                        } else {
+                            return <Redirect to="/login" />
+                        }
+                    }} />
+
                     <Route exact path="/days/new" render={(props) => {
                         return <DayForm {...props}
-                            addDay={this.addDay} />
+                            addDay={this.addDay}
+                            moods={this.state.moods} />
                     }} />
                     <Route path="/days/edit/:dayId(\d+)" render={(props) => {
                         return <DayEdit {...props}

@@ -4,7 +4,6 @@ import DayDate from "./DayDate"
 import party from "../images/party.gif"
 import sloth from "../images/sloth.gif"
 import sad from "../images/sad.gif"
-import love from "../images/love.gif"
 import stress from "../images/stress.gif"
 
 export default class DayForm extends Component {
@@ -31,7 +30,7 @@ export default class DayForm extends Component {
     constructNewDay = evt => {
         evt.preventDefault()
         const days = {
-            rating: this.state.rating,
+            rating: this.props.moods.find(m => m.rating === this.state.rating).id,
             description: this.state.description,
             date: DayDate.getDate(),
             userId: JSON.parse(sessionStorage.getItem("credentials")).id
@@ -53,6 +52,7 @@ export default class DayForm extends Component {
                                 value="/static/media/party.cd534470.gif"
                                 checked={this.state.rating==="/static/media/party.cd534470.gif"}
                                 />
+                                <h5>Fully caffeinated and lovin' life.</h5>
                             <img src={party} alt="Rad" className="rad"/>
                         </label>
                         <label>
@@ -63,6 +63,7 @@ export default class DayForm extends Component {
                                 value="/static/media/sloth.38784354.gif"
                                 checked={this.state.rating==="/static/media/sloth.38784354.gif"}
                                 />
+                                <h5>My body is here, but my mind is still in bed.</h5>
                             <img src={sloth} alt="Tired" className="tired"/>
                         </label>
                         <label>
@@ -73,17 +74,8 @@ export default class DayForm extends Component {
                                 value="/static/media/sad.e49477f7.gif"
                                 checked={this.state.rating==="/static/media/sad.e49477f7.gif"}
                                 />
+                                <h5>Did I cry today? Yes.</h5>
                             <img src={sad} alt="Sad" className="sad"></img>
-                        </label>
-                        <label>
-                            <input type="radio" 
-                                onChange={this.handleFieldChange}
-                                id="rating"
-                                name="mood"
-                                value="/static/media/love.0f3c8c74.gif"
-                                checked={this.state.rating==="/static/media/love.0f3c8c74.gif"}
-                                />
-                            <img src={love} alt="Love" className="love"></img>
                         </label>
                         <label>
                             <input type="radio" 
@@ -93,6 +85,7 @@ export default class DayForm extends Component {
                                 value="/static/media/stress.078d84f6.gif"
                                 checked={this.state.rating==="/static/media/stress.078d84f6.gif"}
                                 />
+                                <h5>Too stressed to function.</h5>
                             <img src={stress} alt="Stress" className="stress"></img>
                         </label>
                         <input type="textarea" required

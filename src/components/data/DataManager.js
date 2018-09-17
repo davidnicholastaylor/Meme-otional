@@ -41,7 +41,7 @@ export default Object.create(null, {
                 .then(() => this.getAll(link))
         }
     },
-    put: {
+    patch: {
         value: function (editItem, id, link) {
             return fetch(`${remoteURL}/${link}/${id}`, {
                 method: "PATCH",

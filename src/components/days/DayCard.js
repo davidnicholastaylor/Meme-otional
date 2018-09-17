@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import "./day.css"
-// import { Link } from "react-router-dom"
 
 
 
-export default class DayDisplay extends Component {
+export default class DayCard extends Component {
 
     render() {
         let activeUser = JSON.parse(sessionStorage.getItem("credentials"))
@@ -30,7 +29,8 @@ export default class DayDisplay extends Component {
                             <div className="card">
                                 {activeUser.id === day.userId &&
                                     <div className="card-body">
-                                        <img className="rating-display" alt="rating" src={day.rating}/>
+                                        <h4>{day.label}</h4>
+                                        <img className="rating-display" alt="rating" src={day.rating} />
                                         <h5>
                                             {day.date}
                                         </h5>

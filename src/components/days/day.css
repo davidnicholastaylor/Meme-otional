@@ -79,10 +79,6 @@
     border: solid 4px skyblue;
 }
 
-.container input[type=radio]:checked ~ .love {
-    border: solid 4px skyblue;
-}
-
 .container input[type=radio]:checked ~ .stress {
     border: solid 4px skyblue;
 }
@@ -90,27 +86,24 @@
   
 .tired {
     max-width: 150px;
-    margin: .5em;
+    margin-bottom: .5em;
 }
 
 .rad {
     max-width: 150px;
-    margin: .5em;
+    margin-bottom: .5em;
 }
 
 .sad {
     max-width: 150px;
-    margin: .5em;
+    margin-bottom: .5em;
 }
 
-.love {
-    max-width: 150px;
-    margin: .5em;
-}
+
 
 .stress {
     max-width: 150px;
-    margin: .5em;
+    margin-bottom: .5em;
 }
 
 .description {

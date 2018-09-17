@@ -1,4 +1,4 @@
-import { Route, Redirect } from 'react-router-dom'
+import { Redirect  } from 'react-router-dom'
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import "./Navbar.css"
@@ -15,6 +15,7 @@ class NavBar extends Component {
 
     logoutUser = () => {
         this.setState({logout: true})
+        sessionStorage.removeItem("credentials")
     }
     render() {
         return (
@@ -25,10 +26,7 @@ class NavBar extends Component {
                         <Link  to="/days">Day</Link>
                     </li>
                     <li >
-                        <Link  to="/months">Month</Link>
-                    </li>
-                    <li >
-                        <Link  to="/years">Year</Link>
+                        <Link  to="/charts">Charts</Link>
                     </li>
                     <button onClick={this.logoutUser}>Logout</button>
                 </ul>
