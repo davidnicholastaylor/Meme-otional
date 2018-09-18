@@ -10,8 +10,9 @@ class Selfware extends Component {
         return (
             <React.Fragment>
                 <div>
-                    
+                    { sessionStorage.key("credentials") !== null &&
                     <Navbar />
+                    }
                     <AppViews />
                 </div>
             </React.Fragment>

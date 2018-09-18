@@ -103,7 +103,8 @@ export default class AppViews extends Component {
                     <Route path="/days/edit/:dayId(\d+)" render={(props) => {
                         return <DayEdit {...props}
                             editDay={this.editDay}
-                            days={this.state.days} />
+                            days={this.state.days}
+                            moods={this.state.moods} />
                     }} />
 
                 </div>
