@@ -11,7 +11,7 @@ export default class DayCard extends Component {
         )
         return currentMood
     }
-    moodSomething = (id) => {
+    moodDisplay = (id) => {
         return this.getCurrentMood(id).rating
     }
     render() {
@@ -39,7 +39,7 @@ export default class DayCard extends Component {
                                     <div className="card-body">
                                         <h4>{day.label}</h4>
 
-                                        <img className="rating-display" alt="rating" src={this.moodSomething(day.moodId)} />
+                                        <img className="rating-display" alt="rating" src={this.moodDisplay(day.moodId)} />
                                         <h5>
                                             {day.date}
                                         </h5>

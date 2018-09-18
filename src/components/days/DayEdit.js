@@ -7,14 +7,14 @@ import stress from "../images/stress.gif"
 export default class DayEdit extends Component {
     // Set initial state
     state = {
-        rating: "",
+        moodId: "",
         description: "",
         date: null
     }
 
     componentDidMount() {
-        const rating = this.props.days.find(rating => rating.id === parseInt(this.props.match.params.dayId, 0))
-        this.setState(rating);
+        const moodId = this.props.days.find(moodId => moodId.id === parseInt(this.props.match.params.dayId, 0))
+        this.setState(moodId);
         const description = this.props.days.find(description => description.id === parseInt(this.props.match.params.dayId, 0))
         this.setState(description);
     }
@@ -33,7 +33,7 @@ export default class DayEdit extends Component {
     editDay = evt => {
         evt.preventDefault()
         const day = {
-            rating: this.state.rating,
+            moodId: this.props.moods.find(m => m.rating === this.state.moodId).id,
             description: this.state.description,
             date: this.props.days.date,
             userId: JSON.parse(sessionStorage.getItem("credentials")).id
@@ -52,10 +52,10 @@ export default class DayEdit extends Component {
                     <label>
                         <input type="radio"
                             onChange={this.handleFieldChange}
-                            id="rating"
+                            id="moodId"
                             name="mood"
                             value="/static/media/party.cd534470.gif"
-                            checked={this.state.rating === "/static/media/party.cd534470.gif"}
+                            checked={this.state.moodId === "/static/media/party.cd534470.gif"}
                         />
                         <h5>Fully caffeinated and lovin' life.</h5>
                         <img src={party} alt="Rad" className="rad" />
@@ -63,10 +63,10 @@ export default class DayEdit extends Component {
                     <label>
                         <input type="radio"
                             onChange={this.handleFieldChange}
-                            id="rating"
+                            id="moodId"
                             name="mood"
                             value="/static/media/sloth.38784354.gif"
-                            checked={this.state.rating === "/static/media/sloth.38784354.gif"}
+                            checked={this.state.moodId === "/static/media/sloth.38784354.gif"}
                         />
                         <h5>My body is here, but my mind is still in bed.</h5>
                         <img src={sloth} alt="Tired" className="tired" />
@@ -74,10 +74,10 @@ export default class DayEdit extends Component {
                     <label>
                         <input type="radio"
                             onChange={this.handleFieldChange}
-                            id="rating"
+                            id="moodId"
                             name="mood"
                             value="/static/media/sad.e49477f7.gif"
-                            checked={this.state.rating === "/static/media/sad.e49477f7.gif"}
+                            checked={this.state.moodId === "/static/media/sad.e49477f7.gif"}
                         />
                         <h5>Did I cry today? Yes.</h5>
                         <img src={sad} alt="Sad" className="sad"></img>
@@ -85,10 +85,10 @@ export default class DayEdit extends Component {
                     <label>
                         <input type="radio"
                             onChange={this.handleFieldChange}
-                            id="rating"
+                            id="moodId"
                             name="mood"
                             value="/static/media/stress.078d84f6.gif"
-                            checked={this.state.rating === "/static/media/stress.078d84f6.gif"}
+                            checked={this.state.moodId === "/static/media/stress.078d84f6.gif"}
                         />
                         <h5>Too stressed to function.</h5>
                         <img src={stress} alt="Stress" className="stress"></img>
