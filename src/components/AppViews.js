@@ -84,7 +84,7 @@ export default class AppViews extends Component {
                         }
                     }} />
 
-                    <Route exact path="/charts" render={(props) => {
+                    <Route exact path="/chart" render={(props) => {
                         if (this.isAuthenticated()) {
                             return <MoodCharts {...props}
                                 users={this.state.users} 

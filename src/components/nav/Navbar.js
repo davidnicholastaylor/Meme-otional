@@ -23,10 +23,10 @@ class NavBar extends Component {
                 { this.state.logout === false &&
                 <ul >
                     <li >
-                        <Link  to="/days">Day</Link>
+                        <Link  to="/days">Days</Link>
                     </li>
                     <li >
-                        <Link  to="/charts">Charts</Link>
+                        <Link  to="/chart">Chart</Link>
                     </li>
                     <button onClick={this.logoutUser}>Logout</button>
                 </ul>
