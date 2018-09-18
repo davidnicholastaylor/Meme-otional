@@ -27,7 +27,7 @@ export default class DaysChart extends Component {
             <div className="chart">
                 <Doughnut
                     data={this.chartData}
-                    width={150}
+                    width={125}
                     height={100}
                     options={{
                         legend: {

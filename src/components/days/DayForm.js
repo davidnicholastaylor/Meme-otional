@@ -12,7 +12,8 @@ export default class DayForm extends Component {
 
     state = {
         moodId: "",
-        description: ""
+        description: "",
+        moodLabel: ""
     }
 
     // Update state whenever an input field is edited
@@ -30,6 +31,7 @@ export default class DayForm extends Component {
     constructNewDay = evt => {
         evt.preventDefault()
         const days = {
+            moodLabel: this.state.moodLabel,
             moodId: this.props.moods.find(m => m.rating === this.state.moodId).id,
             description: this.state.description,
             date: DayDate.getDate(),
@@ -44,56 +46,61 @@ export default class DayForm extends Component {
         return (
             <React.Fragment>
                 <form className="container">
-                        <label>
-                            <input type="radio" 
-                                onChange={this.handleFieldChange}
-                                id="moodId"
-                                name="mood"
-                                value="/static/media/party.cd534470.gif"
-                                checked={this.state.moodId==="/static/media/party.cd534470.gif"}
-                                />
-                                <h5>Fully caffeinated and lovin' life.</h5>
-                            <img src={party} alt="Rad" className="rad"/>
-                        </label>
-                        <label>
-                            <input type="radio" 
-                                onChange={this.handleFieldChange}
-                                id="moodId"
-                                name="mood"
-                                value="/static/media/sloth.38784354.gif"
-                                checked={this.state.moodId==="/static/media/sloth.38784354.gif"}
-                                />
-                                <h5>My body is here, but my mind is still in bed.</h5>
-                            <img src={sloth} alt="Tired" className="tired"/>
-                        </label>
-                        <label>
-                            <input type="radio" 
-                                onChange={this.handleFieldChange}
-                                id="moodId"
-                                name="mood"
-                                value="/static/media/sad.e49477f7.gif"
-                                checked={this.state.moodId==="/static/media/sad.e49477f7.gif"}
-                                />
-                                <h5>Did I cry today? Yes.</h5>
-                            <img src={sad} alt="Sad" className="sad"></img>
-                        </label>
-                        <label>
-                            <input type="radio" 
-                                onChange={this.handleFieldChange}
-                                id="moodId"
-                                name="mood"
-                                value="/static/media/stress.078d84f6.gif"
-                                checked={this.state.moodId==="/static/media/stress.078d84f6.gif"}
-                                />
-                                <h5>Too stressed to function.</h5>
-                            <img src={stress} alt="Stress" className="stress"></img>
-                        </label>
-                        <input type="textarea" required
+                    <label>
+
+                        <h5 id="moodLabel"
+                            className="moodLabel">Rad: AKA "Fully caffeinated and lovin' life."</h5>
+                        <input type="radio"
                             onChange={this.handleFieldChange}
-                            id="description"
-                            className="description"
-                            placeholder="Why tho?" />
-                        <button onClick={this.constructNewDay}>Submit</button>
+                            id="moodId"
+                            name="mood"
+                            value="/static/media/party.cd534470.gif"
+                            checked={this.state.moodId === "/static/media/party.cd534470.gif"}
+                        />
+                        <img src={party} alt="Rad" className="rad" />
+                    </label>
+                    <label>
+                        <h5 id="moodLabel"
+                            className="moodLabel">Tired: AKA "My body is here, but my mind is not."</h5>
+                        <input type="radio"
+                            onChange={this.handleFieldChange}
+                            id="moodId"
+                            name="mood"
+                            value="/static/media/sloth.38784354.gif"
+                            checked={this.state.moodId === "/static/media/sloth.38784354.gif"}
+                        />
+                        <img src={sloth} alt="Tired" className="tired" />
+                    </label>
+                    <label>
+                        <h5 id="moodLabel"
+                            className="moodLabel">Sad: AKA "Did I cry today? Yes."</h5>
+                        <input type="radio"
+                            onChange={this.handleFieldChange}
+                            id="moodId"
+                            name="mood"
+                            value="/static/media/sad.e49477f7.gif"
+                            checked={this.state.moodId === "/static/media/sad.e49477f7.gif"}
+                        />
+                        <img src={sad} alt="Sad" className="sad"></img>
+                    </label>
+                    <label>
+                        <h5 id="moodLabel"
+                            className="moodLabel">Stressed: AKA "MORE. COFFEE. NOW."</h5>
+                        <input type="radio"
+                            onChange={this.handleFieldChange}
+                            id="moodId"
+                            name="mood"
+                            value="/static/media/stress.078d84f6.gif"
+                            checked={this.state.moodId === "/static/media/stress.078d84f6.gif"}
+                        />
+                        <img src={stress} alt="Stressed" className="stressed"></img>
+                    </label>
+                    <input type="textarea" required
+                        onChange={this.handleFieldChange}
+                        id="description"
+                        className="description"
+                        placeholder="Why tho?" />
+                    <button onClick={this.constructNewDay}>Submit</button>
                 </form>
             </React.Fragment>
         )

@@ -79,39 +79,39 @@
     border: solid 4px skyblue;
 }
 
-.container input[type=radio]:checked ~ .stress {
+.container input[type=radio]:checked ~ .stressed {
     border: solid 4px skyblue;
 }
 
   
 .tired {
-    max-width: 150px;
+    max-width: 200px;
     margin-bottom: .5em;
 }
 
 .rad {
-    max-width: 150px;
+    max-width: 200px;
     margin-bottom: .5em;
 }
 
 .sad {
-    max-width: 150px;
+    max-width: 200px;
     margin-bottom: .5em;
 }
 
 
 
-.stress {
-    max-width: 150px;
+.stressed {
+    max-width: 200px;
     margin-bottom: .5em;
 }
 
 .description {
-    width: 150px;
+    width: 200px;
 }
 
 .rating-display {
-    max-width: 150px;
+    max-width: 200px;
     margin-top: 3em;
 }
 

@@ -37,7 +37,7 @@ export default class DayCard extends Component {
                             <div className="card">
                                 {activeUser.id === day.userId &&
                                     <div className="card-body">
-                                        <h4>{day.label}</h4>
+                                        <h4>{day.moodLabel}</h4>
 
                                         <img className="rating-display" alt="rating" src={this.moodDisplay(day.moodId)} />
                                         <h5>
