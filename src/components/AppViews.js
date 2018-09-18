@@ -77,6 +77,7 @@ export default class AppViews extends Component {
                             return <DayCard {...props}
                                 users={this.state.users} 
                                 days={this.state.days}
+                                moods={this.state.moods}
                                 deleteDay={this.deleteDay} />
                         } else {
                             return <Redirect to="/login" />

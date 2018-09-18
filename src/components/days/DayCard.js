@@ -4,10 +4,18 @@ import "./day.css"
 
 
 export default class DayCard extends Component {
-
+    getCurrentMood = (id) => {
+        console.log(id)
+        const currentMood = this.props.moods.find(mood =>
+            mood.id === id
+        )
+        return currentMood
+    }
+    moodSomething = (id) => {
+        return this.getCurrentMood(id).rating
+    }
     render() {
         let activeUser = JSON.parse(sessionStorage.getItem("credentials"))
-
         return (
             <React.Fragment>
                 <div className="dayTitle">
@@ -30,7 +38,8 @@ export default class DayCard extends Component {
                                 {activeUser.id === day.userId &&
                                     <div className="card-body">
                                         <h4>{day.label}</h4>
-                                        <img className="rating-display" alt="rating" src={day.rating} />
+
+                                        <img className="rating-display" alt="rating" src={this.moodSomething(day.moodId)} />
                                         <h5>
                                             {day.date}
                                         </h5>
