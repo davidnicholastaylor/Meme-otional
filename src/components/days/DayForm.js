@@ -49,7 +49,7 @@ export default class DayForm extends Component {
                     <label>
 
                         <h5 id="moodLabel"
-                            className="moodLabel">Rad: AKA "Fully caffeinated and lovin' life."</h5>
+                            className="moodLabel">Rad</h5>
                         <input type="radio"
                             onChange={this.handleFieldChange}
                             id="moodId"
@@ -61,7 +61,7 @@ export default class DayForm extends Component {
                     </label>
                     <label>
                         <h5 id="moodLabel"
-                            className="moodLabel">Tired: AKA "My body is here, but my mind is not."</h5>
+                            className="moodLabel">Tired</h5>
                         <input type="radio"
                             onChange={this.handleFieldChange}
                             id="moodId"
@@ -73,7 +73,7 @@ export default class DayForm extends Component {
                     </label>
                     <label>
                         <h5 id="moodLabel"
-                            className="moodLabel">Sad: AKA "Did I cry today? Yes."</h5>
+                            className="moodLabel">Sad</h5>
                         <input type="radio"
                             onChange={this.handleFieldChange}
                             id="moodId"
@@ -85,7 +85,7 @@ export default class DayForm extends Component {
                     </label>
                     <label>
                         <h5 id="moodLabel"
-                            className="moodLabel">Stressed: AKA "MORE. COFFEE. NOW."</h5>
+                            className="moodLabel">Stressed</h5>
                         <input type="radio"
                             onChange={this.handleFieldChange}
                             id="moodId"
