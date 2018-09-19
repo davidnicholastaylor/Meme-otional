@@ -25,7 +25,7 @@ export default class Login extends Component {
         let password = this.state.password;
         DataManager.getAll("users")
             .then(users => {
-                let loginUser = users.find(u => u.inputPassword === password && u.inputUsername === username)
+                let loginUser = users.find(u => u.activePassword === password && u.activeUser === username)
                 if (loginUser) {
                     sessionStorage.setItem(
                         "credentials",
@@ -49,14 +49,14 @@ export default class Login extends Component {
         return (
             <form onSubmit={this.handleLogin}>
                 <h1>Welcome back</h1>
-                <label htmlFor="inputUsername">
+                <label htmlFor="activeUser">
                     Username
                 </label>
                 <input onChange={this.handleFieldChange} type="username"
                     id="username"
                     placeholder="Username"
                     required="" autoFocus="" />
-                <label htmlFor="inputPassword">
+                <label htmlFor="activePassword">
                     Password
                 </label>
                 <input onChange={this.handleFieldChange} type="password"

@@ -34,7 +34,6 @@ class NavBar extends Component {
             }
             { this.state.logout === true &&
             <div>
-                {this.setState({logout: false})}
                 <Redirect to="/login" />
                 </div>
             }

@@ -21,8 +21,6 @@ export default class DaysChart extends Component {
     }
 
     render() {
-        console.log(this.props.data)
-        console.log(this.chartData)
         return (
             <div className="chart">
                 <Doughnut

@@ -83,7 +83,7 @@ export default class DayEdit extends Component {
                             value="/static/media/sad.e49477f7.gif"
                             checked={this.state.moodId === "/static/media/sad.e49477f7.gif"}
                         />
-                        <img src={sad} alt="Sad" className="sad"></img>
+                        <img src={sad} alt="Sad" className="sad"/>
                     </label>
                     <label>
                         <h5 id="moodLabel"
@@ -95,7 +95,7 @@ export default class DayEdit extends Component {
                             value="/static/media/stress.078d84f6.gif"
                             checked={this.state.moodId === "/static/media/stress.078d84f6.gif"}
                         />
-                        <img src={stress} alt="Stressed" className="stressed"></img>
+                        <img src={stress} alt="Stressed" className="stressed"/>
                     </label>
                     <input type="textarea" required
                         onChange={this.handleFieldChange}

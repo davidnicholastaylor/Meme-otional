@@ -5,7 +5,6 @@ import "./day.css"
 
 export default class DayCard extends Component {
     getCurrentMood = (id) => {
-        console.log(id)
         const currentMood = this.props.moods.find(mood =>
             mood.id === id
         )
