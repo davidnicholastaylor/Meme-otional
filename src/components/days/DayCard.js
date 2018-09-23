@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import { Button } from 'semantic-ui-react'
 import "./day.css"
+import 'semantic-ui-css/semantic.min.css'
 
 
 
@@ -13,6 +15,7 @@ export default class DayCard extends Component {
     moodDisplay = (id) => {
         return this.getCurrentMood(id).rating
     }
+
     render() {
         let activeUser = JSON.parse(sessionStorage.getItem("credentials"))
         return (
@@ -45,18 +48,16 @@ export default class DayCard extends Component {
                                         <p>
                                             {day.description}
                                         </p>
-                                        <div className="card-link">
-                                            <button type="button"
+                                        <Button.Group floated='right'>
+                                            <Button circular icon="edit outline"
                                                 onClick={() =>
-                                                    this.props.history.push(`/days/edit/${day.id}`)}
-                                                className="separate-link">Edit mood
-                                        </button>
-                                            <button
+                                                    this.props.history.push(`/days/edit/${day.id}`)
+                                                    }/>
+                                            <Button circular icon="trash alternate outline"
                                                 onClick={() =>
-                                                    this.props.deleteDay(day.id, "days")}
-                                                className="separate-link">Delete mood
-                                        </button>
-                                        </div>
+                                                    this.props.deleteDay(day.id, "days")
+                                                }/>
+                                        </Button.Group>
                                     </div>
                                 }
                             </div>
