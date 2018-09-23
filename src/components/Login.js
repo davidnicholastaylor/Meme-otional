@@ -45,9 +45,11 @@ export default class Login extends Component {
     
     render() {
         let registerLink = () => this.props.history.push("/register")
-        
+        let session = sessionStorage.getItem("credentials")
         return (
-            <form onSubmit={this.handleLogin}>
+            <React.Fragment>
+            {session === null &&
+            <form>
                 <h1>Welcome back</h1>
                 <label htmlFor="activeUser">
                     Username
@@ -63,14 +65,16 @@ export default class Login extends Component {
                     id="password"
                     placeholder="Password"
                     required="" autoFocus="" />
-                <button type="submit">
+                <button onClick={this.handleLogin}>
                     Sign In
                 </button>
 
-                <button type="submit" onClick={registerLink.bind()}>
+                <button onClick={registerLink.bind()}>
                     Register
                 </button>
             </form>
+            }
+            </React.Fragment>
         )
     }
 }

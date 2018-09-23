@@ -59,9 +59,9 @@ export default class Register extends Component {
             })
     }
     render() {
-        let cancel = () => this.props.history.push("/login")
+        let cancel = () => this.props.history.push("")
         return (
-            <form onSubmit={this.constructNewUser}>
+            <form>
                 <h1>Start the Journey</h1>
                 <label htmlFor="activeUser">
                     Username
@@ -84,10 +84,10 @@ export default class Register extends Component {
                     id="password"
                     placeholder="Password"
                     required="" autoFocus="" />
-                <button type="submit">
+                <button onClick={this.constructNewUser}>
                     Register
                     </button>
-                <button type="click" onClick={cancel.bind()}>
+                <button onClick={cancel.bind()}>
                 Cancel
                 </button>
             </form>

@@ -5,10 +5,6 @@ import "./Navbar.css"
 
 
 class NavBar extends Component {
-    // logout = () => {
-    //     sessionStorage.removeItem("credentials")
-    //     return <Redirect to ="/login" />
-    //   }
     state = {
         logout: false
     }
@@ -34,7 +30,7 @@ class NavBar extends Component {
             }
             { this.state.logout === true &&
             <div>
-                <Redirect to="/login" />
+                <Redirect to="" />
                 </div>
             }
             </nav>
