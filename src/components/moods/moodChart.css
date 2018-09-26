@@ -2,9 +2,13 @@
     justify-content: center;
     max-width: 314px;
     max-height: 314px;
-    margin: 3em; 
+    margin: auto; 
+    margin-top: 3em;
+    margin-bottom: 3em;
+    display: block;
 }
 
 .daysChart {
     justify-content: center;
+    margin: auto;
 }
