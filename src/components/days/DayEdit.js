@@ -98,7 +98,7 @@ export default class DayEdit extends Component {
                 <TextArea autoHeight placeholder={this.state.description} style={{ minHeight: 100 }} required
                     onChange={this.handleFieldChange}
                     id="description"
-                    className="description" />
+                    className="descriptionForm" />
                 <Button compact size="huge" floated="right" icon="save outline" type="submit" onClick={this.editDay} />
                     </div>
                 </form >

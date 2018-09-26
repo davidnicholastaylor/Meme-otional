@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import 'semantic-ui-css/semantic.min.css'
-import { Button, Icon, Menu, Segment, Sidebar } from 'semantic-ui-react'
+import { Button, Icon, Menu, Segment, Sidebar, Card } from 'semantic-ui-react'
 import { Link } from "react-router-dom"
 import "./day.css"
 
@@ -44,7 +44,7 @@ export default class DayCard extends Component {
         return (
             <React.Fragment>
                 {this.state.logout === false &&
-                    <div>
+                    <div className="navigation">
                         {sessionStorage.key("credentials") !== null &&
                             <div>
                                 <Button circular icon="sidebar" onClick={this.handleButtonClick} />
@@ -73,7 +73,7 @@ export default class DayCard extends Component {
                             <Sidebar.Pusher dimmed={visible}>
 
 
-                                <div className="dayTitle">
+                                <div className="greeting">
                                     <h2>
                                         Hello, {activeUser.username}
                                     </h2>
@@ -92,23 +92,24 @@ export default class DayCard extends Component {
                                             <div className="card">
                                                 {activeUser.id === day.userId &&
                                                     <div className="card-body">
-                                                        <h4 className="labelDisplay">{this.labelDisplay(day.moodId)}</h4>
-
-                                                        <img className="rating-display" alt="rating" src={this.moodDisplay(day.moodId)} />
-                                                        <h5>
-                                                            {day.date}
-                                                        </h5>
-                                                        <p>
-                                                            {day.description}
-                                                        </p>
-                                                        <Button compact size="big" floated="right" circular icon="edit outline"
-                                                            onClick={() =>
-                                                                this.props.history.push(`/days/edit/${day.id}`)
-                                                            } />
-                                                        <Button compact size="big" floated="right" circular icon="trash alternate outline"
-                                                            onClick={() =>
-                                                                this.props.deleteDay(day.id, "days")
-                                                            } />
+                                                        <Card
+                                                            image={this.moodDisplay(day.moodId)}
+                                                            header={this.labelDisplay(day.moodId)}
+                                                            meta={day.date}
+                                                            description={day.description}
+                                                            extra={
+                                                                <div>
+                                                                    <Button compact size="big" floated="right" circular icon="edit outline"
+                                                                        onClick={() =>
+                                                                            this.props.history.push(`/days/edit/${day.id}`)
+                                                                        } />
+                                                                    <Button compact size="big" floated="right" circular icon="trash alternate outline"
+                                                                        onClick={() =>
+                                                                            this.props.deleteDay(day.id, "days")
+                                                                        } />
+                                                                </div>
+                                                            }
+                                                        />
                                                     </div>
                                                 }
                                             </div>

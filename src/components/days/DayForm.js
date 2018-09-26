@@ -93,7 +93,7 @@ export default class DayForm extends Component {
                     <TextArea autoHeight placeholder='Why tho?' style={{ minHeight: 100 }} required
                         onChange={this.handleFieldChange}
                         id="description"
-                        className="description" />
+                        className="descriptionForm" />
                     <Button compact size="huge" floated="right" icon="save outline" type="submit" onClick={this.constructNewDay} />
                 </form>
             </React.Fragment>
