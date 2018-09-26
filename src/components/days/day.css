@@ -11,6 +11,7 @@
 .card {
     display: flex;
     justify-content: space-evenly;
+    padding-bottom: 1em;
 }
 
 .card-title {
@@ -36,10 +37,6 @@
     justify-content: space-evenly;
 }
 
-.navigation {
-    margin-top: 1em;
-}
-
 .dayButton {
     display: flex;
     justify-content: space-evenly;
@@ -50,6 +47,19 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
+
+.formLabel {
+    padding: 2em;
+    border: solid 2px pink;
+}
+
+.sidebarContent {
+    background-color: lightpink;
+}
+
+.navigation {
+    margin: .5em;
 }
 
 .container {
@@ -114,6 +124,7 @@
     width: 200px;
 
 }
+
 .descriptionForm {
     margin-top: 1em;
     width: 200px;
@@ -121,7 +132,7 @@
 }
 
 .card-body {
-    margin-top: 3em;
+    margin-top: 2em;
     width: 200px;
 }
 

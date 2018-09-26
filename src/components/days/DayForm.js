@@ -46,7 +46,6 @@ export default class DayForm extends Component {
             <React.Fragment>
                 <form className="container">
                     <label>
-
                         <h5 id="moodLabel">Rad</h5>
                         <input type="radio"
                             onChange={this.handleFieldChange}
@@ -94,7 +93,7 @@ export default class DayForm extends Component {
                         onChange={this.handleFieldChange}
                         id="description"
                         className="descriptionForm" />
-                    <Button compact size="huge" floated="right" icon="save outline" type="submit" onClick={this.constructNewDay} />
+                    <Button color="violet" compact size="huge" floated="right" icon="save outline" type="submit" onClick={this.constructNewDay} />
                 </form>
             </React.Fragment>
         )

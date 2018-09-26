@@ -99,7 +99,7 @@ export default class DayEdit extends Component {
                     onChange={this.handleFieldChange}
                     id="description"
                     className="descriptionForm" />
-                <Button compact size="huge" floated="right" icon="save outline" type="submit" onClick={this.editDay} />
+                <Button color="violet" compact size="huge" floated="right" icon="save outline" type="submit" onClick={this.editDay} />
                     </div>
                 </form >
             </React.Fragment >

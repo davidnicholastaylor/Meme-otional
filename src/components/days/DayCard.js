@@ -47,11 +47,11 @@ export default class DayCard extends Component {
                     <div className="navigation">
                         {sessionStorage.key("credentials") !== null &&
                             <div>
-                                <Button circular icon="sidebar" onClick={this.handleButtonClick} />
-                                <Button as={Link} to='/login' floated="right" circular onClick={this.logoutUser}>Logout</Button>
+                                <Button color="violet" circular icon="sidebar" onClick={this.handleButtonClick} />
+                                <Button color="violet" as={Link} to='/login' floated="right" circular onClick={this.logoutUser}>Logout</Button>
                             </div>
                         }
-                        <Sidebar.Pushable as={Segment}>
+                        <Sidebar.Pushable as={Segment} className="sidebarContent">
                             <Sidebar
                                 as={Menu}
                                 animation='overlay'
@@ -99,16 +99,17 @@ export default class DayCard extends Component {
                                                             description={day.description}
                                                             extra={
                                                                 <div>
-                                                                    <Button compact size="big" floated="right" circular icon="edit outline"
+                                                                    <Button color="violet" compact size="big" floated="right" circular icon="edit outline"
                                                                         onClick={() =>
                                                                             this.props.history.push(`/days/edit/${day.id}`)
                                                                         } />
-                                                                    <Button compact size="big" floated="right" circular icon="trash alternate outline"
+                                                                    <Button color="violet" compact size="big" floated="right" circular icon="trash alternate outline"
                                                                         onClick={() =>
                                                                             this.props.deleteDay(day.id, "days")
                                                                         } />
                                                                 </div>
                                                             }
+                                                            color="pink"
                                                         />
                                                     </div>
                                                 }
