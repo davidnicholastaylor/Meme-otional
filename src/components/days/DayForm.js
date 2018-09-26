@@ -5,6 +5,7 @@ import party from "../images/party.gif"
 import sloth from "../images/sloth.gif"
 import sad from "../images/sad.gif"
 import stress from "../images/stress.gif"
+import { Form, TextArea } from 'semantic-ui-react'
 
 export default class DayForm extends Component {
     // Set initial state
@@ -95,11 +96,10 @@ export default class DayForm extends Component {
                         />
                         <img src={stress} alt="Stressed" className="stressed"/>
                     </label>
-                    <input type="textarea" required
+                    <TextArea autoHeight placeholder='Why tho?' style={{ minHeight: 100 }} required
                         onChange={this.handleFieldChange}
                         id="description"
-                        className="description"
-                        placeholder="Why tho?" />
+                        className="description" />
                     <button onClick={this.constructNewDay}>Submit</button>
                 </form>
             </React.Fragment>
