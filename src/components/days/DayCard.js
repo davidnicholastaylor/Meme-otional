@@ -33,9 +33,14 @@ export default class DayCard extends Component {
         return this.getCurrentMood(id).rating
     }
 
+    labelDisplay = (id) => {
+        return this.getCurrentMood(id).desc
+    }
+
     render() {
         const { visible } = this.state
         let activeUser = JSON.parse(sessionStorage.getItem("credentials"))
+
         return (
             <React.Fragment>
                 {this.state.logout === false &&
@@ -74,7 +79,7 @@ export default class DayCard extends Component {
                                     </h2>
                                 </div>
                                 <div className="dayButton">
-                                    <Button color="violet"
+                                    <Button compact size="big" color="violet"
                                         onClick={() => {
                                             this.props.history.push("/days/new")
                                         }}>
@@ -87,7 +92,7 @@ export default class DayCard extends Component {
                                             <div className="card">
                                                 {activeUser.id === day.userId &&
                                                     <div className="card-body">
-                                                        <h4>{day.moodLabel}</h4>
+                                                        <h4 className="labelDisplay">{this.labelDisplay(day.moodId)}</h4>
 
                                                         <img className="rating-display" alt="rating" src={this.moodDisplay(day.moodId)} />
                                                         <h5>
@@ -96,11 +101,11 @@ export default class DayCard extends Component {
                                                         <p>
                                                             {day.description}
                                                         </p>
-                                                        <Button floated="right" circular icon="edit outline"
+                                                        <Button compact size="big" floated="right" circular icon="edit outline"
                                                             onClick={() =>
                                                                 this.props.history.push(`/days/edit/${day.id}`)
                                                             } />
-                                                        <Button floated="right" circular icon="trash alternate outline"
+                                                        <Button compact size="big" floated="right" circular icon="trash alternate outline"
                                                             onClick={() =>
                                                                 this.props.deleteDay(day.id, "days")
                                                             } />

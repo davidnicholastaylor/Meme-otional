@@ -4,7 +4,7 @@ import party from "../images/party.gif"
 import sloth from "../images/sloth.gif"
 import sad from "../images/sad.gif"
 import stress from "../images/stress.gif"
-import { Form, TextArea } from 'semantic-ui-react'
+import { TextArea, Button } from 'semantic-ui-react'
 export default class DayEdit extends Component {
     // Set initial state
     state = {
@@ -49,61 +49,59 @@ export default class DayEdit extends Component {
     render() {
         return (
             <React.Fragment>
-                <form className="container">
+                <form>
+                    <div className="container">
                     <label>
-                        <h5 id="moodLabel"
-                            className="moodLabel">Rad</h5>
-                        <input type="radio"
-                            onChange={this.handleFieldChange}
-                            id="moodId"
-                            name="mood"
-                            value="/static/media/party.cd534470.gif"
-                            checked={this.state.moodId === "/static/media/party.cd534470.gif"}
-                        />
-                        <img src={party} alt="Rad" className="rad" />
-                    </label>
-                    <label>
-                        <h5 id="moodLabel"
-                            className="moodLabel">Tired</h5>
-                        <input type="radio"
-                            onChange={this.handleFieldChange}
-                            id="moodId"
-                            name="mood"
-                            value="/static/media/sloth.38784354.gif"
-                            checked={this.state.moodId === "/static/media/sloth.38784354.gif"}
-                        />
-                        <img src={sloth} alt="Tired" className="tired" />
-                    </label>
-                    <label>
-                        <h5 id="moodLabel"
-                            className="moodLabel">Sad</h5>
-                        <input type="radio"
-                            onChange={this.handleFieldChange}
-                            id="moodId"
-                            name="mood"
-                            value="/static/media/sad.e49477f7.gif"
-                            checked={this.state.moodId === "/static/media/sad.e49477f7.gif"}
-                        />
-                        <img src={sad} alt="Sad" className="sad"/>
-                    </label>
-                    <label>
-                        <h5 id="moodLabel"
-                            className="moodLabel">Stressed</h5>
-                        <input type="radio"
-                            onChange={this.handleFieldChange}
-                            id="moodId"
-                            name="mood"
-                            value="/static/media/stress.078d84f6.gif"
-                            checked={this.state.moodId === "/static/media/stress.078d84f6.gif"}
-                        />
-                        <img src={stress} alt="Stressed" className="stressed"/>
-                    </label>
-                    <TextArea autoHeight placeholder={this.state.description} style={{ minHeight: 100 }} required
+                        <h5 id="moodLabel">Rad</h5>
+                    <input type="radio"
                         onChange={this.handleFieldChange}
-                        id="description"
-                        className="description" />
-                    <button type="submit" onClick={this.editDay} >Submit</button>
-                </form>
+                        id="moodId"
+                        name="mood"
+                        value="/static/media/party.cd534470.gif"
+                        checked={this.state.moodId === "/static/media/party.cd534470.gif"}
+                    />
+                    <img src={party} alt="Rad" className="rad" />
+                    </label>
+                <label>
+                    <h5 id="moodLabel">Tired</h5>
+                    <input type="radio"
+                        onChange={this.handleFieldChange}
+                        id="moodId"
+                        name="mood"
+                        value="/static/media/sloth.38784354.gif"
+                        checked={this.state.moodId === "/static/media/sloth.38784354.gif"}
+                    />
+                    <img src={sloth} alt="Tired" className="tired" />
+                </label>
+                <label>
+                    <h5 id="moodLabel">Sad</h5>
+                    <input type="radio"
+                        onChange={this.handleFieldChange}
+                        id="moodId"
+                        name="mood"
+                        value="/static/media/sad.e49477f7.gif"
+                        checked={this.state.moodId === "/static/media/sad.e49477f7.gif"}
+                    />
+                    <img src={sad} alt="Sad" className="sad" />
+                </label>
+                <label>
+                    <h5 id="moodLabel">Stressed</h5>
+                    <input type="radio"
+                        onChange={this.handleFieldChange}
+                        id="moodId"
+                        name="mood"
+                        value="/static/media/stress.078d84f6.gif"
+                        checked={this.state.moodId === "/static/media/stress.078d84f6.gif"}
+                    />
+                    <img src={stress} alt="Stressed" className="stressed" />
+                </label>
+                <TextArea autoHeight placeholder={this.state.description} style={{ minHeight: 100 }} required
+                    onChange={this.handleFieldChange}
+                    id="description"
+                    className="description" />
+                <Button compact size="huge" floated="right" icon="save outline" type="submit" onClick={this.editDay} />
+                    </div>
+                </form >
             </React.Fragment >
         )
     }

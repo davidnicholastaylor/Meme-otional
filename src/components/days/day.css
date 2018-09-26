@@ -28,7 +28,6 @@
     align-items: right;
     flex-direction: row;
     margin: 20px 0 0 0;
-    font-size: 0.7em
 }
 
 .separate-link {
@@ -49,12 +48,10 @@
 
 .container {
     display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
+    margin: auto;
+    padding-top: 2em;
     cursor: pointer;
-    width: 100px;
-    font-size: 22px;
+    width: 200px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -107,12 +104,17 @@
 }
 
 .description {
+    margin-top: 1em;
+    width: 200px;
+
+}
+.card-body {
+    margin-top: 3em;
     width: 200px;
 }
 
 .rating-display {
     max-width: 200px;
-    margin-top: 3em;
 }
 
 .editRating {

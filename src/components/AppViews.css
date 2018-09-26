@@ -1,3 +1,5 @@
 .viewArea {
     margin-top: 1em;
+    justify-content: center;
+    margin: auto;
 }
