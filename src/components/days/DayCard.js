@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import 'semantic-ui-css/semantic.min.css'
-import { Button, Icon, Menu, Segment, Sidebar } from 'semantic-ui-react'
+import { Button, Icon, Menu, Segment, Sidebar, Card } from 'semantic-ui-react'
 import { Link } from "react-router-dom"
 import "./day.css"
 
@@ -33,20 +33,25 @@ export default class DayCard extends Component {
         return this.getCurrentMood(id).rating
     }
 
+    labelDisplay = (id) => {
+        return this.getCurrentMood(id).desc
+    }
+
     render() {
         const { visible } = this.state
         let activeUser = JSON.parse(sessionStorage.getItem("credentials"))
+
         return (
             <React.Fragment>
                 {this.state.logout === false &&
-                    <div>
+                    <div className="navigation">
                         {sessionStorage.key("credentials") !== null &&
                             <div>
-                                <Button circular icon="sidebar" onClick={this.handleButtonClick} />
-                                <Button as={Link} to='/login' floated="right" circular onClick={this.logoutUser}>Logout</Button>
+                                <Button color="violet" circular icon="sidebar" onClick={this.handleButtonClick} />
+                                <Button color="violet" as={Link} to='/login' floated="right" circular onClick={this.logoutUser}>Logout</Button>
                             </div>
                         }
-                        <Sidebar.Pushable as={Segment}>
+                        <Sidebar.Pushable as={Segment} className="sidebarContent">
                             <Sidebar
                                 as={Menu}
                                 animation='overlay'
@@ -68,13 +73,13 @@ export default class DayCard extends Component {
                             <Sidebar.Pusher dimmed={visible}>
 
 
-                                <div className="dayTitle">
+                                <div className="greeting">
                                     <h2>
                                         Hello, {activeUser.username}
                                     </h2>
                                 </div>
                                 <div className="dayButton">
-                                    <Button color="violet"
+                                    <Button compact size="big" color="violet"
                                         onClick={() => {
                                             this.props.history.push("/days/new")
                                         }}>
@@ -87,23 +92,25 @@ export default class DayCard extends Component {
                                             <div className="card">
                                                 {activeUser.id === day.userId &&
                                                     <div className="card-body">
-                                                        <h4>{day.moodLabel}</h4>
-
-                                                        <img className="rating-display" alt="rating" src={this.moodDisplay(day.moodId)} />
-                                                        <h5>
-                                                            {day.date}
-                                                        </h5>
-                                                        <p>
-                                                            {day.description}
-                                                        </p>
-                                                        <Button floated="right" circular icon="edit outline"
-                                                            onClick={() =>
-                                                                this.props.history.push(`/days/edit/${day.id}`)
-                                                            } />
-                                                        <Button floated="right" circular icon="trash alternate outline"
-                                                            onClick={() =>
-                                                                this.props.deleteDay(day.id, "days")
-                                                            } />
+                                                        <Card
+                                                            image={this.moodDisplay(day.moodId)}
+                                                            header={this.labelDisplay(day.moodId)}
+                                                            meta={day.date}
+                                                            description={day.description}
+                                                            extra={
+                                                                <div>
+                                                                    <Button color="violet" compact size="big" floated="right" circular icon="edit outline"
+                                                                        onClick={() =>
+                                                                            this.props.history.push(`/days/edit/${day.id}`)
+                                                                        } />
+                                                                    <Button color="violet" compact size="big" floated="right" circular icon="trash alternate outline"
+                                                                        onClick={() =>
+                                                                            this.props.deleteDay(day.id, "days")
+                                                                        } />
+                                                                </div>
+                                                            }
+                                                            color="pink"
+                                                        />
                                                     </div>
                                                 }
                                             </div>

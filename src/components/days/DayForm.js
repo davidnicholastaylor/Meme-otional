@@ -5,6 +5,7 @@ import party from "../images/party.gif"
 import sloth from "../images/sloth.gif"
 import sad from "../images/sad.gif"
 import stress from "../images/stress.gif"
+import { TextArea, Button } from 'semantic-ui-react'
 
 export default class DayForm extends Component {
     // Set initial state
@@ -13,7 +14,6 @@ export default class DayForm extends Component {
     state = {
         moodId: "",
         description: "",
-        moodLabel: ""
     }
 
     // Update state whenever an input field is edited
@@ -31,7 +31,6 @@ export default class DayForm extends Component {
     constructNewDay = evt => {
         evt.preventDefault()
         const days = {
-            moodLabel: this.state.moodLabel,
             moodId: this.props.moods.find(m => m.rating === this.state.moodId).id,
             description: this.state.description,
             date: DayDate.getDate(),
@@ -47,9 +46,7 @@ export default class DayForm extends Component {
             <React.Fragment>
                 <form className="container">
                     <label>
-
-                        <h5 id="moodLabel"
-                            className="moodLabel">Rad</h5>
+                        <h5 id="moodLabel">Rad</h5>
                         <input type="radio"
                             onChange={this.handleFieldChange}
                             id="moodId"
@@ -60,8 +57,7 @@ export default class DayForm extends Component {
                         <img src={party} alt="Rad" className="rad" />
                     </label>
                     <label>
-                        <h5 id="moodLabel"
-                            className="moodLabel">Tired</h5>
+                        <h5 id="moodLabel">Tired</h5>
                         <input type="radio"
                             onChange={this.handleFieldChange}
                             id="moodId"
@@ -72,8 +68,7 @@ export default class DayForm extends Component {
                         <img src={sloth} alt="Tired" className="tired" />
                     </label>
                     <label>
-                        <h5 id="moodLabel"
-                            className="moodLabel">Sad</h5>
+                        <h5 id="moodLabel">Sad</h5>
                         <input type="radio"
                             onChange={this.handleFieldChange}
                             id="moodId"
@@ -81,11 +76,10 @@ export default class DayForm extends Component {
                             value="/static/media/sad.e49477f7.gif"
                             checked={this.state.moodId === "/static/media/sad.e49477f7.gif"}
                         />
-                        <img src={sad} alt="Sad" className="sad"/>
+                        <img src={sad} alt="Sad" className="sad" />
                     </label>
                     <label>
-                        <h5 id="moodLabel"
-                            className="moodLabel">Stressed</h5>
+                        <h5 id="moodLabel">Stressed</h5>
                         <input type="radio"
                             onChange={this.handleFieldChange}
                             id="moodId"
@@ -93,14 +87,13 @@ export default class DayForm extends Component {
                             value="/static/media/stress.078d84f6.gif"
                             checked={this.state.moodId === "/static/media/stress.078d84f6.gif"}
                         />
-                        <img src={stress} alt="Stressed" className="stressed"/>
+                        <img src={stress} alt="Stressed" className="stressed" />
                     </label>
-                    <input type="textarea" required
+                    <TextArea autoHeight placeholder='Why tho?' style={{ minHeight: 100 }} required
                         onChange={this.handleFieldChange}
                         id="description"
-                        className="description"
-                        placeholder="Why tho?" />
-                    <button onClick={this.constructNewDay}>Submit</button>
+                        className="descriptionForm" />
+                    <Button color="violet" compact size="huge" floated="right" icon="save outline" type="submit" onClick={this.constructNewDay} />
                 </form>
             </React.Fragment>
         )
