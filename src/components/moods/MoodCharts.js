@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import DaysChart from "./DaysChart"
+import "./moodChart.css"
 
 export default class MoodCharts extends Component {
 
@@ -55,7 +56,9 @@ export default class MoodCharts extends Component {
     render() {
         return (
             <React.Fragment>
-                <DaysChart data={this.getData()} />
+            <div className="daysChart">
+                <DaysChart  data={this.getData()} />
+            </div>
             </React.Fragment>
         )
     }

@@ -61,7 +61,7 @@ export default class AppViews extends Component {
             <React.Fragment>
                 <div className="viewArea">
 
-                    <Route path="" render={(props) => {
+                    <Route path="/login" render={(props) => {
                         return <Login {...props}
                            />
                     }} />

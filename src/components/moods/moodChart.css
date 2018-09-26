@@ -1,4 +1,10 @@
 .chart {
+    justify-content: center;
     max-width: 314px;
     max-height: 314px;
+    margin: 3em; 
+}
+
+.daysChart {
+    justify-content: center;
 }

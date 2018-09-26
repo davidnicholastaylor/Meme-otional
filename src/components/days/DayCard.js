@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
+import { Button } from 'semantic-ui-react'
+import 'semantic-ui-css/semantic.min.css'
 import "./day.css"
+
 
 
 
@@ -13,6 +16,7 @@ export default class DayCard extends Component {
     moodDisplay = (id) => {
         return this.getCurrentMood(id).rating
     }
+
     render() {
         let activeUser = JSON.parse(sessionStorage.getItem("credentials"))
         return (
@@ -23,12 +27,12 @@ export default class DayCard extends Component {
                     </h2>
                 </div>
                 <div className="dayButton">
-                    <button type="button"
+                    <Button color="violet"
                         onClick={() => {
                             this.props.history.push("/days/new")
                         }}>
                         How do you feel?
-                    </button>
+                    </Button>
                 </div>
                 {
                     this.props.days.map(day =>
@@ -45,18 +49,14 @@ export default class DayCard extends Component {
                                         <p>
                                             {day.description}
                                         </p>
-                                        <div className="card-link">
-                                            <button type="button"
+                                            <Button floated="right" circular icon="edit outline"
                                                 onClick={() =>
-                                                    this.props.history.push(`/days/edit/${day.id}`)}
-                                                className="separate-link">Edit mood
-                                        </button>
-                                            <button
+                                                    this.props.history.push(`/days/edit/${day.id}`)
+                                                    }/>
+                                            <Button floated="right" circular icon="trash alternate outline"
                                                 onClick={() =>
-                                                    this.props.deleteDay(day.id, "days")}
-                                                className="separate-link">Delete mood
-                                        </button>
-                                        </div>
+                                                    this.props.deleteDay(day.id, "days")
+                                                }/>
                                     </div>
                                 }
                             </div>
