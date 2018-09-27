@@ -2,15 +2,21 @@
   text-align: center;
 }
 
-/* .App-logo {
-  height: 80px;
-} */
+.App-logo {
+  animation: App-logo-spin infinite 10s linear;
+  height: 50px;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 
 .App-header {
-  background-color: #222;
-  height: 50px;
+  background-color: palevioletred;
+  height: 80px;
   padding: 20px;
-  color: white;
+  color: antiquewhite;
 }
 
 .App-title {
