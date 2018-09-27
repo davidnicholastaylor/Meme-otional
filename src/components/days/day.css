@@ -11,7 +11,7 @@
 .card {
     display: flex;
     justify-content: space-evenly;
-    padding-bottom: 1em;
+    padding-bottom: 2em;
 }
 
 .card-title {

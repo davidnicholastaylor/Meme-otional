@@ -42,7 +42,7 @@ export default class DaysChart extends Component {
                                 borderColor: "grey",
                                 hoverBackgroundColor: "black",
                                 fontColor: "grey",
-                                fontSize: 20
+                                fontSize: 25
                             }
                         ]
                     }}
@@ -53,7 +53,7 @@ export default class DaysChart extends Component {
                             display: true,
                             text: "Moodiness",
                             fontColor: "rgb(90, 190, 150)",
-                            fontSize: 25
+                            fontSize: 30
                         },
                         legend: {
                             labels: {
@@ -61,8 +61,7 @@ export default class DaysChart extends Component {
                             },
                             display: true,
                             position: "left"
-                        },
-                        cutoutPercentage: 10
+                        }
                     }}
                 />
             </div>
