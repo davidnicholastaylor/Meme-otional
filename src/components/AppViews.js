@@ -80,7 +80,7 @@ export default class AppViews extends Component {
                                 moods={this.state.moods}
                                 deleteDay={this.deleteDay} />
                         } else {
-                            return <Redirect to="/login" />
+                            return <Redirect to="" />
                         }
                     }} />
 
@@ -91,7 +91,7 @@ export default class AppViews extends Component {
                                 days={this.state.days}
                                 moods={this.state.moods} />
                         } else {
-                            return <Redirect to="/login" />
+                            return <Redirect to="" />
                         }
                     }} />
 
