@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react'
-import { Doughnut } from 'react-chartjs-2';
+import { Doughnut, Radar } from 'react-chartjs-2';
 import "./moodChart.css"
 
 export default class DaysChart extends Component {
@@ -28,20 +28,40 @@ export default class DaysChart extends Component {
         return (
             <div className="chart">
                 <Doughnut
-                    data={this.chartData}
+                    data={{
+                        labels: ["Rad", "Tired", "Sad", "Stressed"],
+                        datasets: [
+                            {
+                                data: this.props.data,
+                                backgroundColor: [
+                                    "hsl(250, 100%, 45%)",
+                                    "hsl(150, 100%, 55%)",
+                                    "hsl(0, 100%, 75%)",
+                                    "hsl(48, 100%, 65%)"
+                                ],
+                                borderColor: "grey",
+                                hoverBackgroundColor: "black",
+                                fontColor: "grey",
+                                fontSize: 20
+                            }
+                        ]
+                    }}
                     width={125}
                     height={100}
                     options={{
                         title: {
-                            text: "All the moods",
+                            display: true,
+                            text: "Moodiness",
                             fontColor: "rgb(90, 190, 150)",
                             fontSize: 25
                         },
                         legend: {
                             labels: {
                                 fontColor: "black"
-                            }
-                        }
+                            },
+                            display: true
+                        },
+                        cutoutPercentage: 10
                     }}
                 />
             </div>

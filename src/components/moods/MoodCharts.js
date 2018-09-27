@@ -74,8 +74,8 @@ export default class MoodCharts extends Component {
                     <div>
                         {sessionStorage.key("credentials") !== null &&
                             <div>
-                                <Button circular icon="sidebar" onClick={this.handleButtonClick} />
-                                <Button as={Link} to='' floated="right" circular onClick={this.logoutUser}>Logout</Button>
+                                <Button color="violet" circular icon="sidebar" onClick={this.handleButtonClick} />
+                                <Button color="violet" as={Link} to='' floated="right" circular onClick={this.logoutUser}>Logout</Button>
                             </div>
                         }
                         <Sidebar.Pushable as={Segment}>
