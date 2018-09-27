@@ -59,7 +59,7 @@ export default class Register extends Component {
             })
     }
     render() {
-        let cancel = () => this.props.history.push("/login")
+        let cancel = () => this.props.history.push("")
         return (
             <form>
                 <h1>Start the Journey</h1>

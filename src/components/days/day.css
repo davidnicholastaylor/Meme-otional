@@ -54,6 +54,10 @@
     border: solid 2px pink;
 }
 
+#moodLabel {
+    margin-top: 2em;
+}
+
 .sidebarContent {
     background-color: lightpink;
 }
