@@ -16,7 +16,10 @@ export default class DaysChart extends Component {
                     "hsl(150, 100%, 55%)",
                     "hsl(0, 100%, 75%)",
                     "hsl(48, 100%, 65%)"
-                ]
+                ],
+                borderColor: "grey",
+                fontColor: "grey",
+                fontSize: 20
             }
         ]
     }
@@ -29,6 +32,11 @@ export default class DaysChart extends Component {
                     width={125}
                     height={100}
                     options={{
+                        title: {
+                            text: "All the moods",
+                            fontColor: "rgb(90, 190, 150)",
+                            fontSize: 25
+                        },
                         legend: {
                             labels: {
                                 fontColor: "black"
