@@ -59,7 +59,8 @@ export default class DaysChart extends Component {
                             labels: {
                                 fontColor: "black"
                             },
-                            display: true
+                            display: true,
+                            position: "left"
                         },
                         cutoutPercentage: 10
                     }}
