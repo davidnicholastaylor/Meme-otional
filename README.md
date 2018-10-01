@@ -2,13 +2,13 @@
 
 ## *Life is often a blur.* :dizzy_face:
 
-#### When explaining your wellness to a professional, most people default to saying, “I’m fine.”
+<p> When explaining your wellness to a professional, most people default to saying, “I’m fine.”</p>
 
-#### This app allows the user to track their ups and down.
+<p> This app allows the user to track their ups and down.</p>
  
-#### With a simple but fun format, the user can better articulate their well-being to professionals or simply track their wellness for personal reflection.
+<p> With a simple but fun format, the user can better articulate their well-being to professionals or simply track their wellness for personal reflection.</p>
 
-#### The ultimate goal is providing self-awareness that leads to better support and self-accountability.
+<p> The ultimate goal is providing self-awareness that leads to better support and self-accountability.</p>
 
 ***
 
@@ -67,5 +67,6 @@ npm start
     - moodChart.css
 
 ***
-
+<p align="center">
 ![Selfware ERD](Selfware-ERD.PNG)
+</p>
