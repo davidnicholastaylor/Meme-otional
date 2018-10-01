@@ -67,6 +67,5 @@ npm start
     - moodChart.css
 
 ***
-<p align="center">
+
 ![Selfware ERD](Selfware-ERD.PNG)
-</p>
