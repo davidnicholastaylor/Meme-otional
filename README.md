@@ -68,4 +68,6 @@ npm start
 
 ***
 
-![Selfware ERD](Selfware-ERD.PNG)
+<p align="center">
+	<img src="/Selfware-ERD.png">
+</p>
