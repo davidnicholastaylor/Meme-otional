@@ -1,8 +1,6 @@
 # Meme-otional :stuck_out_tongue_winking_eye:
 
-***
-
-## *Life is often a blur.*
+## *Life is often a blur.* :dizzy_face:
 
 #### When explaining your wellness to a professional, most people default to saying, “I’m fine.”
 
@@ -14,16 +12,16 @@
 
 ***
 
-## Technology used
+## Technology used :link:
 
-+ React
-+ JSON server
-+ Semantic UI - React
-+ Chartjs 2 - React
++ <a href="https://reactjs.org">React</a>
++ <a href=https://www.npmjs.com/package/json-server>JSON server</a>
++ <a href="https://react.semantic-ui.com/">Semantic UI - React</a>
++ <a href="https://www.npmjs.com/package/react-chartjs-2">React Chartjs 2</a>
 
 ***
 
-## How to install and run
+## How to install and run :computer:
 
 1. Clone the repository
 ```
@@ -42,31 +40,31 @@ npm start
 
 ***
 
-## Components
+## Components :open_file_folder:
 
-1. Selfware.js
-2. AppViews.js
-3. Appviews.css
-4. Login.js
-5. Register.js
-6. data
-⋅⋅* DataManager.js
-7. days
-⋅⋅* DayCard.js
-⋅⋅* DayDate.js
-⋅⋅* DayEdit.js
-⋅⋅* DayForm.js
-⋅⋅* day.css
-8. images
-⋅⋅* emoji-tongue.png
-⋅⋅* party.gif
-⋅⋅* sad.gif
-⋅⋅* sloth.gif
-⋅⋅* stress.gif
-9. moods
-⋅⋅* DaysChart.js
-⋅⋅* MoodCharts.js
-⋅⋅* moodChart.css
+- Selfware.js
+- AppViews.js
+- Appviews.css
+- Login.js
+- Register.js
+- data
+    - DataManager.js
+- days
+ DayCard.js
+    - DayDate.js
+    - DayEdit.js
+    - DayForm.js
+    - day.css
+- images
+    - emoji-tongue.png
+    - party.gif
+    - sad.gif
+    - sloth.gif
+    - stress.gif
+- moods
+    - DaysChart.js
+    - MoodCharts.js
+    - moodChart.css
 
 ***
 
