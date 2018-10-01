@@ -69,5 +69,5 @@ npm start
 ***
 
 <p align="center">
-	<img src="/Selfware-ERD.png">
+	<img src="Selfware-ERD.PNG">
 </p>
