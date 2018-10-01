@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react'
-import { Doughnut, Radar } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 import "./moodChart.css"
 
 export default class DaysChart extends Component {
