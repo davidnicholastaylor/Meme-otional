@@ -10,6 +10,7 @@ export default class Register extends Component {
         email: "",
         password: ""
     }
+    
 
     // Update state whenever an input field is edited
     handleFieldChange = (evt) => {
@@ -62,7 +63,7 @@ export default class Register extends Component {
         let cancel = () => this.props.history.push("")
         return (
             <form>
-                <h1>Start the Journey</h1>
+                <h1></h1>
                 <label htmlFor="activeUser">
                     Username
                 </label>
