@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import DataManager from "./data/DataManager"
-import { Button, Modal } from 'semantic-ui-react'
+import { Button, Modal, Divider, Grid, Input } from 'semantic-ui-react'
 
 export default class Login extends Component {
 
@@ -94,43 +94,59 @@ export default class Login extends Component {
         return (
             <React.Fragment>
                 {session === null &&
+                <Grid centered columns={2}>
                     <form>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <Grid.Row>
                         <h1>Get in your feelings</h1>
-                        <input onChange={this.handleFieldChange} type="username"
+                        </Grid.Row>
+                        <Divider hidden/>
+                        <Grid.Row>
+                        <Input focus onChange={this.handleFieldChange} type="username"
                             id="username"
                             placeholder="Username"
                             required="" autoFocus="" />
-                        <input onChange={this.handleFieldChange} type="password"
+                            </Grid.Row>
+                        <Divider hidden/>
+                        <Grid.Row>
+                        <Input focus onChange={this.handleFieldChange} type="password"
                             id="password"
                             placeholder="Password"
                             required="" autoFocus="" />
+                            <Divider hidden/>
+                            </Grid.Row>
                         <Button onClick={this.handleLogin}>
                             Sign In
                 </Button>
 
-                        <Button onClick={this.show('small')}>Register</Button>
+                        <Button onClick={this.show('mini')}>Register</Button>
 
                         <Modal size={size} open={open}>
-                            <Modal.Header>Start the Journey</Modal.Header>
+                            <Modal.Header>Let the moodiness begin</Modal.Header>
                             <Modal.Content>
                                 <label htmlFor="activeUser">
-                                    Username
+                                    What do you want to be called?
                 </label>
-                                <input onChange={this.handleFieldChange} type="username"
+                                <Input focus onChange={this.handleFieldChange} type="username"
                                     id="username"
                                     placeholder="Username"
                                     required="" autoFocus="" />
+                                <Divider hidden/>
                                 <label htmlFor="activeEmail">
-                                    Email address
+                                    How can we reach you?
                 </label>
-                                <input onChange={this.handleFieldChange} type="email"
+                                <Input focus onChange={this.handleFieldChange} type="email"
                                     id="email"
                                     placeholder="Email address"
                                     required="" autoFocus="" />
+
+                                <Divider hidden/>
                                 <label htmlFor="activePassword">
-                                    Password
+                                    Super secret password
                 </label>
-                                <input onChange={this.handleFieldChange} type="password"
+                                <Input focus onChange={this.handleFieldChange} type="password"
                                     id="password"
                                     placeholder="Password"
                                     required="" autoFocus="" />
@@ -141,6 +157,7 @@ export default class Login extends Component {
                             </Modal.Actions>
                         </Modal>
                     </form>
+                    </Grid>
                 }
             </React.Fragment>
         )
