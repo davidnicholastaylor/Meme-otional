@@ -117,21 +117,21 @@ export default class Login extends Component {
                                     Username
                 </label>
                                 <input onChange={this.handleFieldChange} type="username"
-                                    id="registerUsername"
+                                    id="username"
                                     placeholder="Username"
                                     required="" autoFocus="" />
                                 <label htmlFor="activeEmail">
                                     Email address
                 </label>
                                 <input onChange={this.handleFieldChange} type="email"
-                                    id="registerEmail"
+                                    id="email"
                                     placeholder="Email address"
                                     required="" autoFocus="" />
                                 <label htmlFor="activePassword">
                                     Password
                 </label>
                                 <input onChange={this.handleFieldChange} type="password"
-                                    id="registerPassword"
+                                    id="password"
                                     placeholder="Password"
                                     required="" autoFocus="" />
                             </Modal.Content>
