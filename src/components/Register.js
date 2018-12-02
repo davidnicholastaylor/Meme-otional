@@ -63,7 +63,7 @@ export default class Register extends Component {
         let cancel = () => this.props.history.push("")
         return (
             <form>
-                <h1></h1>
+                <h1>HI</h1>
                 <label htmlFor="activeUser">
                     Username
                 </label>
