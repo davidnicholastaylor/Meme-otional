@@ -1,4 +1,4 @@
-# Meme-otional :stuck_out_tongue_winking_eye:
+# Memeotional :stuck_out_tongue_winking_eye:
 
 ## *Life is often a blur.* :dizzy_face:
 
@@ -23,17 +23,19 @@
 
 ## How to install and run :computer:
 
-1. Clone the repository
+1. Fork the repository
+
+2. Clone your repository
 ```
-git clone https://github.com/davidnicholastaylor/Meme-otional.git
+git clone repository-link
 ```
 
-2. Run the JSON server
+3. Run the JSON server
 ```
 json-server -p 5002 -w self-ware.json
 ```
 
-3. Start the app
+4. Start the app
 ```
 npm start
 ```
